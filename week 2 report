@@ -1,1 +1,32 @@
+# Week 2 Progress Report
 
+**Project:** ridgelib, a C++ library implementing ridge regression from scratch (Project 7)
+**Group size:** 10 members
+**Week:** 2 ([5th] to [12th])
+**Repository:** 
+
+## Completed
+- Submitted the Week 1 report.
+Mandela Nickson -Fomulating the cost programe
+
+
+## In Progress
+- Each member is reading and tracing their own module line by line so that they can explain it.
+- Each member is building the project and running the tests on their own machine.
+- Creating personal branches and making the first commits to GitHub.
+- Setting up VS Code (extensions, build and debug tasks) for the group.
+
+## Challenges/Blockers
+- Our own coding and commits are behind schedule: most members have not written or committed any code yet. Since the Git history is used to assess each member's contribution, this is the main risk, and we plan to fix it in the coming week.
+- Part of the code was produced with AI. Each member must read it, verify it, and be able to explain and defend their module, so we need time for walkthroughs.
+- The group size changed twice (7, then 8, then 10 members), which forced us to redo the work split.
+- Most modules depend on the matrix module, so it has to be committed and merged first.
+- [Edit: add other real problems, such as Git or CMake setup issues or meeting times.]
+
+## Next Week
+- Every member commits their own work from their own GitHub account: their module (after reading and checking it), their tests, and a small example program for their module.
+- Open pull requests and review them in the review ring (member 1 reviews member 2, ..., member 10 reviews member 1); merge reviewed pull requests, starting with the matrix module.
+- Extend each module's unit tests with edge cases and invalid inputs that the member writes personally.
+- Compare the ridge model against scikit-learn on a small dataset and record the results.
+- Start the README sections for each module, **hand-typed** by each member.
+- Hold short walkthrough sessions where members explain their modules to each other.
