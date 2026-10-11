@@ -1,0 +1,20 @@
+#include <iostream>
+#include "include/Group-7-project-ridge-lib/matrix.hpp"
+
+int main() {
+    ridge::Matrix matrix(2, 3, {1, 2, 3, 4, 5, 6});
+    ridge::Matrix transposed = matrix.transpose();
+    ridge::Matrix product = matrix * transposed;
+
+    std::cout << "Matrix product:\n";
+    for (std::size_t row = 0; row < product.rows(); ++row) {
+        for (std::size_t col = 0; col < product.cols(); ++col) {
+            std::cout << product(row, col) << ' ';
+        }
+        std::cout << '\n';
+    }
+
+    ridge::Vector vector{1, 1, 1};
+    ridge::Vector result = matrix.multiply(vector);
+    std::cout << "Matrix-vector product: [" << result[0] << ", " << result[1] << "]\n";
+}
