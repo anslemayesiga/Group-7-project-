@@ -1,5 +1,25 @@
-Khalid Taban Luate (25/E/08584/PS BELE)
-• Assigned Targets: cost.hpp/cpp, ridge_regression.hpp/cpp, test_cost/ridge.cpp (Analytical Closed-Form Solver)
-• Week 1 Activity: Formulated functional calculations tracking active regularized cost variants including the explicit L₂ shrinkage modifier.
-• Next Week Plan: Code the closed-form normal equation matrix calculation loop: (XᵀX + λI)⁻¹Xᵀy, partnering with Ayesiga Anslem's low-level engine.
+## Week 1 Contributions - KHALID TABAN LUATE (Reg No: 25/E/08584/PS)
+**Role: Normal Equation & Linear Solver**
 
+### 📊 Mathematical & Algorithmic Research
+* **Solver Method Evaluation**: Conducted a comparative analysis between **Gaussian Elimination with Partial Pivoting** and **Cholesky Decomposition** to determine the most computationally stable and efficient approach for solving the normal equation \(\theta = (X^T X)^{-1} X^T y\).
+* **Numerical Stability Analysis**: Researched edge cases regarding floating-point errors, condition numbers, and how partial pivoting mitigates catastrophic cancellation during back-substitution.
+* **Singular Matrix Handling**: Defined the mathematical criteria for non-invertible/singular matrices (where \(X^T X\) lacks full rank) and mapped out the theoretical fallback procedures when the determinant approaches zero.
+
+### 🏗️ Architectural Design & Planning
+* **Class Interface Layout**: Drafted the initial structural blueprint for the linear solver module, outlining the required inputs (feature matrix \(X\) and target vector \(y\)) and expected output weights vector (\(\theta\)).
+* **Error & Exception Workflow**: Planned a robust error-handling framework to catch singular or near-singular matrices, deciding on explicit custom exception types to flag downstream to Person 4 (Linear Regression Baseline).
+* **Control Flow Mapping**: Created pseudocode workflows tracking how a dataset progresses from a raw matrix to a trained model via the closed-form fit method.
+
+### 🔄 Dependency & Team Alignment
+* **Matrix API Requirements**: Collaborated with **Person 1** to finalize the exact requirements for the `Matrix` class, explicitly requesting optimized methods for matrix transposition, matrix-matrix multiplication, and deep copying.
+* **Downstream Integration Planning**: Consulted with **Person 4** to ensure the linear solver's output format directly matches the expectations of the Base Regressor interface and the `predict` step.
+
+### 📚 References & Resources Used
+* **Textbook**: *Introduction to Linear Algebra* by Gilbert Strang – Referenced for the fundamental mechanics of the normal equation and projection onto the column space.
+* **Textbook**: *Numerical Linear Algebra* by Lloyd N. Trefethen and David Bau III – Utilized for comparing the numerical stability and operation counts (\(O(n^3)\)) of Gaussian elimination vs. Cholesky factorization.
+* **Documentation**: NumPy Linear Algebra Reference (`numpy.linalg`) – Analyzed standard industry exception-handling behaviors for singular matrices.
+
+### 🤖 AI Assistance Statement
+* **AI Tool Used**: Large Language Model (Google AI)
+* **Nature of Assistance**: Leveraged AI during the research phase to clarify the trade-offs between matrix decomposition techniques and to brainstorm structural formatting for the initial Markdown documentation.

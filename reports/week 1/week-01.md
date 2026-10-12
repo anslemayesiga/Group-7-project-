@@ -9,8 +9,8 @@ members of the group!!
 6. SSEMWOGERERE OTHMAN 25/U/05369/PS BCCE
 7. KAMUGISHA ELIAS 25/U/26715 BBIO
 8. MUTYABA RASHID 20/U/19699/PSA BELE
-9.Khalid Taban Luate 25/E/08584/PS BELE
-10.Ainemugabe Crisbert 23/U/27222/ps BELE
+9. Khalid Taban Luate 25/E/08584/PS BELE
+10. Ainemugabe Crisbert 23/U/27222/ps BELE
 
 week 1 (started on  28th September to 5th October )
 
