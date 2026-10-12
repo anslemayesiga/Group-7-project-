@@ -2,4 +2,4 @@
 Kyelanyi Martin Tom (25/U/31011/PS)
 • Assigned Targets: scaler.hpp, scaler.cpp, test_scaler.cpp (Feature Scaling, CMake Setup & Repo Maintenance)
 • Week 1 Activity: Configured repository standard properties, global .gitignore layouts, and baseline targets inside root CMakeLists.txt files.
-• Next Week Plan: Code column iteration functions to extract mean tracking targets and standard deviation variants for Z-score normalization modules.
+• Next Week Plan: Code Column iteration functions to extract mean tracking targets and standard deviation variants for Z-score normalization modules.
