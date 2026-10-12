@@ -1,4 +1,4 @@
-#pragma once
+
 // Owner: Ayesiga Anslem (Matrix and vector operations)
 #include <cstddef>
 #include <vector>
