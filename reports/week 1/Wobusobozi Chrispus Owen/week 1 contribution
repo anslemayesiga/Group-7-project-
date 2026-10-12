@@ -1,5 +1,5 @@
 Wobusobozi Chrispus Owen (25/U/0860 BELE)
-• Assigned Targets: dataset.hpp/cpp, preprocessing.hpp/cpp, test_dataset/preprocessing.cpp (Data Ingestion)
+• Assigned Targets: dataset.hpp/cpp, preprocessing.hpp/cpp, test_dataset/preprocessing.cpp 
 • Week 1 Activity: Analyzed storage class boundaries for mapping parsed datasets. Researched file stream tokenizers for handling comma-separated raw elements safely.
 • Next Week Plan: Implement concrete data loading function routines to ingest external text-based datasets into memory matrix components.
 
