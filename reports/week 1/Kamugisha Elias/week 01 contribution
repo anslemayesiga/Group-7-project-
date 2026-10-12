@@ -1,1 +1,5 @@
+KAMUGISHA ELIAS (25/U/26715 BBIO)
+• Assigned Targets: linear_regression.hpp, linear_regression.cpp, test_linear_regression.cpp (Baseline Model)
+• Week 1 Activity: Constructed core linear prediction structural stubs mapping plain unregularized hypothesis configurations to verify operational consistency.
+• Next Week Plan: Build data logging trackers to output complete loss evaluation traces across active development steps.
 
