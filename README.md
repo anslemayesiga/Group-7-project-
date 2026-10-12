@@ -1,4 +1,4 @@
-# Group-7-project- Ridgelib/
+1.# Group-7-project- Ridgelib/
 
 2. Project Objectives
 
