@@ -15,13 +15,21 @@ Copy the 5 core objectives agreed upon by your team during Week 1
 • To thoroughly test the library components.
 
 3. Project structure
+4. 
     ridgelib/
+   
    CMakeLists.txt
+   
    README.md
+   
     include/ridgelib/   - Public API Headers (12 modules)
+   
     src/                - Implementations
+   
     tests/              - Unit tests
+   
     examples/           - Code demonstration
+   
     reports/            - Weekly reports
    
    4.  Divided the 12 topics on the project sheet among the 10 members ie
