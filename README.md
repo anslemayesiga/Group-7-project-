@@ -18,7 +18,8 @@ Copy the 5 core objectives agreed upon by your team during Week 1:
     tests/              - Unit tests
     examples/           - Code demonstration
     reports/            - Weekly reports
-   4.Divided the 12 topics on the project sheet among the 10 members ie
+   
+   4.  Divided the 12 topics on the project sheet among the 10 members ie
    Ayesiga Anslem: matrix and vector operations
    Wobusobozi Chrispus Owen : dataset loading and data preprocessing
    Kyelanyi Martin Tom: feature scaling (also repository and CMake setup)
