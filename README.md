@@ -28,5 +28,5 @@ Copy the 5 core objectives agreed upon by your team during Week 1:
    Mandela Nickson: ridge cost function and L2 regularization (ridge model)
    Tumweheire Desire:gradient descent
    SSEMWOGERERE OTHMAN : evaluation
-   Ainemugabe Crisbert :hyperparameter tuning modelIn  
+   Ainemugabe Crisbert :hyperparameter tuning modelIng  
 
