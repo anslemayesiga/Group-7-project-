@@ -1,1 +1,5 @@
+MUTYABA RASHID (20/U/19699/PSA BELE)
+• Assigned Targets: regressor.hpp, regressor.cpp, test_regressor.cpp (High-Level Model Wrapper)
+• Week 1 Activity: Mapped structural data movement pipelines within the parent regressor class to accept array-based input properties cleanly.
+• Next Week Plan: Code primary model prediction routines executing targeted mathematical dot product transformations (ŷ = Xθ + b).
 
