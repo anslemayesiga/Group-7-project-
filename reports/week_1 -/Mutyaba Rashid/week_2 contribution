@@ -1,0 +1,8 @@
+Primary Model Prediction Routine
+
+I will implement the primary model prediction routine to calculate predicted outputs using the mathematical transformation:
+ŷ = Xθ + b
+The routine will calculate the dot product of each input sample's features and the learned parameter vector θ, then add the intercept b. It will return the predicted values for the input data.
+For each sample i, the calculation is:
+ŷᵢ = Σⱼ Xᵢⱼθⱼ + b
+The implementation will ensure that the number of input features matches the number of learned coefficients before performing the calculation.
