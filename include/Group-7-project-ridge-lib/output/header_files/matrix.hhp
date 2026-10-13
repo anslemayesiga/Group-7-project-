@@ -1,35 +1,40 @@
+#pragma once                       // 1. include guard: prevents double inclusion
+#include <cstddef>                 // 2. std::size_t
+#include <vector>                  //    std::vector
 
-// Owner: Ayesiga Anslem: small demo of the Matrix class.
-#include <iostream>
-#include <stdexcept>
+namespace ridge {                  // 3. everything lives in the ridge namespace
 
-#include "../include/Group-7-project-ridge-lib/matrix.hpp"
+using Vector = std::vector<double>;   // 4. a Vector is just a vector of doubles
 
-static void print(const ridge::Matrix& m, const char* name) {
-    std::cout << name << " (" << m.rows() << "x" << m.cols() << "):\n";
-    for (std::size_t i = 0; i < m.rows(); ++i) {
-        for (std::size_t j = 0; j < m.cols(); ++j) std::cout << m(i, j) << "\t";
-        std::cout << "\n";
-    }
-}
+class Matrix {
+public:                            // 5. the public API users can call
+    Matrix() = default;                                        // empty 0x0 matrix
+    Matrix(std::size_t rows, std::size_t cols, double fill = 0.0);
+    Matrix(std::size_t rows, std::size_t cols, std::vector<double> data);
 
-int main() {
-    ridge::Matrix A(2, 3, {1, 2, 3, 4, 5, 6});
-    ridge::Matrix B = A.transpose();   // 3x2
-    ridge::Matrix C = A * B;           // 2x2 product
-    print(A, "A");
-    print(B, "A transposed");
-    print(C, "A * A^T");
+    static Matrix identity(std::size_t n);                     // Matrix::identity(3)
 
-    ridge::Vector v{1, 1, 1};
-    ridge::Vector Av = A.multiply(v);  // matrix-vector product
-    std::cout << "A * [1 1 1] = [" << Av[0] << ", " << Av[1] << "]\n";
-    std::cout << "dot([1,2,3],[4,5,6]) = " << ridge::dot({1, 2, 3}, {4, 5, 6}) << "\n";
+    std::size_t rows() const;
+    std::size_t cols() const;
 
-    try {
-        ridge::Matrix bad = A * A;     // 2x3 times 2x3: inner sizes differ
-    } catch (const std::invalid_argument& e) {
-        std::cout << "Caught expected error: " << e.what() << "\n";
-    }
-}
+    double& operator()(std::size_t r, std::size_t c);          // read and write: m(1,2) = 5
+    const double& operator()(std::size_t r, std::size_t c) const;  // read-only version
 
+    Matrix transpose() const;
+    Matrix operator+(const Matrix& other) const;
+    Matrix operator-(const Matrix& other) const;
+    Matrix operator*(const Matrix& other) const;               // matrix product
+    Matrix operator*(double scalar) const;
+    Vector multiply(const Vector& v) const;                    // matrix times vector
+
+    Vector column(std::size_t c) const;
+    Vector row(std::size_t r) const;
+
+private:                           // 6. internal data, hidden from users
+    std::size_t rows_ = 0, cols_ = 0;
+    std::vector<double> data_;     // all elements in one flat array, row by row
+};
+
+double dot(const Vector& a, const Vector& b);   // 7. free function, outside the class
+
+}  // namespace ridge
