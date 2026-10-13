@@ -1,0 +1,5 @@
+Khalid Taban Luate (25/E/08584/PS BELE)
+• Assigned Targets: cost.hpp/cpp, ridge_regression.hpp/cpp, test_cost/ridge.cpp (Analytical Closed-Form Solver)
+• Week 1 Activity: Formulated functional calculations tracking active regularized cost variants including the explicit L₂ shrinkage modifier.
+• Next Week Plan: Code the closed-form normal equation matrix calculation loop: (XᵀX + λI)⁻¹Xᵀy, partnering with Ayesiga Anslem's low-level engine.
+

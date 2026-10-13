@@ -1,8 +1,9 @@
+
 // Owner: Ayesiga Anslem: small demo of the Matrix class.
 #include <iostream>
 #include <stdexcept>
 
-#include "include/Group-7-project-ridge-lib/matrix.hpp"
+#include "../include/Group-7-project-ridge-lib/matrix.hpp"
 
 static void print(const ridge::Matrix& m, const char* name) {
     std::cout << name << " (" << m.rows() << "x" << m.cols() << "):\n";
@@ -31,3 +32,4 @@ int main() {
         std::cout << "Caught expected error: " << e.what() << "\n";
     }
 }
+

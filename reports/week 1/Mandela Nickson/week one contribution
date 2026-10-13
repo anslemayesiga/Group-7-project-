@@ -1,0 +1,4 @@
+• Assigned Modules: metrics.hpp, metrics.cpp, test_metrics.cpp
+• Status: In Progress
+• Week 1 Actions: Defined public method contracts inside metrics.hpp for calculating R² scores, Mean Absolute Error (MAE), and Mean Squared Error (MSE).
+• Next Week Objective: Implement evaluation equations to calculate performance discrepancy vectors between model predictions and true array values.
