@@ -1,0 +1,41 @@
+## Week 2 - Person 5: Normal Equation & Linear Solver
+
+**Student Name:** Khalid Taban Luate
+**Reg No:** 25/E/08584/PS
+**Role:** Person 5 - Normal Equation (Linear Solver)
+**Course:** Group 7 Project - Ridge Regression
+
+**Dependency:** Person 1 - Ayesiga Anslem - Matrix Class
+
+## Dependency Status: RESOLVED
+Person 1 (Ayesiga Anslem) delivered `src/matrix.cpp` and `include/matrix.hpp` with:
+- `Matrix::transpose()` - verified in demo: A(2,3) -> A.transpose() = 3x2
+- `operator*` for Matrix multiplication - verified: A * B = 2x2 product
+- `Matrix::multiply(Vector)` - verified Matrix-Vector product Av = [, ]
+- `dot()` product and bounds checking - throws `std::invalid_argument` when inner sizes differ
+
+This fully unblocks my task which requires: `theta = (X^T X)^-1 X^T y`
+
+### What I Implemented in Week 2
+
+**1. Header File: `include/Group-7-project-ridge-lib/normal_equation.hpp`**
+- Declared `ridge::Vector gaussian_solve(const Matrix& A, const Vector& b)`
+- Declared `ridge::Vector fit_normal_equation(const Matrix& X, const Vector& y)`
+
+**2. Implementation File: `src/normal_equation.cpp`**
+- Implemented Gaussian elimination with partial pivoting:
+    - Find max pivot row and swap to improve numerical stability
+    - Forward elimination to upper triangular form
+    - Back substitution
+- Implemented closed-form normal equation using Person 1's API:
+  ```cpp
+  Matrix Xt = X.transpose(); // From Person 1
+  Matrix XtX = Xt * X; // From Person 1
+  Vector Xty = Xt.multiply(y); // From Person 1
+  Vector theta = gaussian_solve(XtX, Xty); // My solver
+
+
+AI Tool Used: Meta AI (Muse Spark) was used to assist in drafting the Gaussian elimination 
+code structure and debugging template errors. All code was reviewed, tested, and understood 
+by me before committing. Prompt used: "write gaussian_solve compatible with ridge::Matrix
+having rows(), cols(), operator(i,j) and transpose()"
