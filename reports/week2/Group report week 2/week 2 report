@@ -1,0 +1,41 @@
+# WEEK 2 PROGRESS REPORT
+
+**Project:** ridgelib – C++ Library for Ridge Regression (Project 7)  
+**Group Size:** 10 Members  
+**Week:** 2 ([12] – [14])  
+**Repository:** []
+
+## 1. Completed Work
+
+- Submitted the Week 1 progress report.
+- Expanded the group to 10 members and assigned each member responsibility for a specific module, covering matrix operations, data preprocessing, regression, optimization, tuning, and model evaluation.
+- Agreed on the project structure, public API, and coding conventions, including the cost function, intercept handling, and feature scaling.
+- Obtained an initial version of the library, including the source code, unit tests, example program, and sample dataset, generated with Claude AI.
+
+## 2. Work in Progress
+
+- Reviewing and understanding the assigned modules line by line.
+- Building the project and running tests on individual computers.
+- Setting up VS Code and GitHub branches for individual contributions.
+- Preparing to commit and review each member’s work.
+
+## 3. Challenges and Blockers
+
+- Individual coding and GitHub contributions are behind schedule, as most members have not yet committed their work.
+- The AI-generated code requires careful review, testing, and understanding by all members.
+- Changes in group size required repeated adjustments to task allocation.
+- Most modules depend on the matrix module, making its implementation and integration a priority.
+
+## 4. Plans for Week 3
+
+- Have every member implement, test, and commit their assigned module using their own GitHub account.
+- Open and review pull requests, beginning with the matrix module before integrating dependent modules.
+- Add personally written tests for edge cases and invalid inputs.
+- Compare the library’s results with scikit-learn on a small dataset.
+- Write the README sections in each member’s own words and conduct short sessions to explain the implemented modules.
+
+## 5. Use of AI Tools
+
+The group used **Claude AI (Anthropic)** to generate the initial project structure, module implementations, unit tests, example program, sample dataset, and supporting documentation. It was also used to reorganize tasks following the increase in group size, prepare the development environment, and explain parts of the code.
+
+These tools helped the group establish an initial working foundation and save time. However, the generated code has not yet been fully reviewed or verified by the group. Members will independently examine their assigned modules, run the tests, verify the results, and ensure they can explain their contributions. The README will be rewritten in the group’s own words, and all AI assistance will be disclosed as required.
