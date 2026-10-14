@@ -1,24 +1,23 @@
-cmake_minimum_required(VERSION 3.14)
-project(FeatureScalerLibrary VERSION 1.0.0 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.10)
+project(RidgeML_Library VERSION 1.0)
 
+# Force the project environment to build with standard modern C++17 properties
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# 1. Main Shared Library Target
-add_library(feature_scaler
-    src/MinMaxScaler.cpp
-    src/StandardScaler.cpp
+# 1. Compile your reusable core ML library module targets 
+add_library(ridge_ml_lib 
+    src/data_loader.cpp
 )
 
-# Specify public include directories
-target_include_directories(feature_scaler PUBLIC 
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+# 2. Declare the public headers path so external applications can find module interface definitions
+target_include_directories(ridge_ml_lib PUBLIC include)
+
+# 3. Create an executable process target to verify your unit tests automatically
+add_executable(test_data_loader 
+    tests/test_data_loader.cpp
 )
 
-# 2. Example Application Executable
-add_executable(example_scaling examples/example_scaling.cpp)
-target_link_libraries(example_scaling PRIVATE feature_scaler)
-
-# 3. Unit Tests Executable
-add_executable(test_scalers tests/test_scalers.cpp)
-target_link_libraries(test_scalers PRIVATE feature_scaler)
+# 4. Link your executable binary directly into the compiled library layer assets 
+target_link_libraries(test_data_loader PRIVATE ridge_ml_lib)
+ 
