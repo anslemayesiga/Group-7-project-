@@ -1,0 +1,4 @@
+Ainemugabe Crisbert (23/U/27222/ps BELE)
+• Assigned Targets: tuning.hpp, tuning.cpp, test_tuning.cpp (Hyperparameter Grid-Search Optimizer)
+Week 2 contribution: I input dataset features, Grid of penalisation of weights,automated the testing controllers,performance comparison for the best hyperparameters.
+Week 3: Next task should focus on implementing, testing, and evaluating the hyperparameter-tuning controller.

@@ -1,0 +1,5 @@
+SSEMWOGERERE OTHMAN (25/U/05369/PS BCCE)
+• Assigned Targets: solver.hpp, solver.cpp, test_solver.cpp (Core Abstraction Wrapper Layer)
+• Week 1 Activity: Established abstraction definitions to allow seamless run transitions between normal equation matrix checks and gradient loops.
+• Next Week Plan: Write defensive evaluation overrides to flag calculation boundaries against non-invertible singular systems.
+

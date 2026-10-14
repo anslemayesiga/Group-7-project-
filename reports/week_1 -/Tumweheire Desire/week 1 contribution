@@ -1,0 +1,5 @@
+Tumweheire Desire (24/U/1386 BELE)
+• Assigned Targets: gradient_descent.hpp, gradient_descent.cpp, test_gradient_descent.cpp (Iterative Optimizer)
+• Week 1 Activity: Configured training model options inside gradient_descent.hpp adjusting baseline learning rates, hyperparameter bounds, and epoch controls.
+• Next Week Plan: Write explicit weight adaptation execution sequences utilizing loss arrays and localized derivative arrays.
+
