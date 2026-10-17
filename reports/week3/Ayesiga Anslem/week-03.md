@@ -1,6 +1,6 @@
 # Week 3 Individual Progress Report
 
-**Name:** Ayesiga Anslem  
+**Name:** Ayesiga Anslem   25/U/0824
 **Assigned module:** Matrix and vector operations  
 **Reporting period:** 13-19 October 2026 (status as of 17 October)
 
@@ -21,11 +21,6 @@
 ## Next Week - files to merge
 
 - Add focused Matrix tests for construction, bounds checking, arithmetic, transpose, vector multiplication, and dot product; then review the Codex-assisted Matrix files before merge. No tests were run during this follow-up.
-
-## AI Use
-
-- **OpenAI Codex (17 October):** drafted this report from repository evidence and repaired integration in the shared checkout across Matrix, CSV loading, feature scaling, normal-equation solving, ridge cost, CMake, and a demo. This is group-level AI-assisted work, not an individual contribution by Ayesiga Anslem. The team must review and understand these changes before accepting them.
-- Add any other AI tools this member used for their own module work; do not mark none without checking.
 
 ## Week 3 shared code status (Codex-assisted)
 
