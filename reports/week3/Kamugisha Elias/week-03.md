@@ -1,4 +1,4 @@
-# Week 3 Individual Progress Report
+
 
 **Name:** Kamugisha Elias  
 **Assigned module:** Linear regression baseline  
