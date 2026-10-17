@@ -1,46 +1,46 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-double ridgeCost(
-    const vector<double>& actual,
-    const vector<double>& predicted,
-    const vector<double>& theta,
+#include "Group-7-project-ridge-lib/ridge_cost.hpp"
+
+#include <cmath>
+#include <stdexcept>
+
+namespace ridge_ml {
+
+double ridge_cost(
+    const Vector& actual,
+    const Vector& predicted,
+    const Vector& theta,
     double lambda
 ) {
-    int m = actual.size();
-
-    if (m == 0 || predicted.size() != actual.size()
-        || theta.empty() || lambda < 0) {
-        return -1.0;
+    if (actual.empty() || predicted.size() != actual.size() || theta.empty()) {
+        throw std::invalid_argument("Ridge cost requires matching non-empty data and parameters");
+    }
+    if (!std::isfinite(lambda) || lambda < 0.0) {
+        throw std::invalid_argument("Ridge regularization strength must be finite and non-negative");
     }
 
-    double errorSum = 0.0;
+    double squared_error = 0.0;
+    for (std::size_t i = 0; i < actual.size(); ++i) {
+        if (!std::isfinite(actual[i]) || !std::isfinite(predicted[i])) {
+            throw std::invalid_argument("Ridge cost inputs must be finite");
+        }
+        const double error = predicted[i] - actual[i];
+        squared_error += error * error;
+    }
+
     double penalty = 0.0;
-    for (int i = 0; i < m; i++) {
-        double error = predicted[i] - actual[i];
-        errorSum += error * error;
-    }
-
-    // Calculate L2 penalty, excluding intercept theta[0]
-    for (int j = 1; j < theta.size(); j++) {
+    for (std::size_t j = 1; j < theta.size(); ++j) {
+        if (!std::isfinite(theta[j])) {
+            throw std::invalid_argument("Ridge parameters must be finite");
+        }
         penalty += theta[j] * theta[j];
     }
+    if (!std::isfinite(theta[0])) {
+        throw std::invalid_argument("Ridge parameters must be finite");
+    }
 
-    // Calculate total Ridge Regression cost
-    return errorSum / (2.0 * m)
-        + lambda * penalty / (2.0 * m);
+    const double sample_count = static_cast<double>(actual.size());
+    return squared_error / (2.0 * sample_count)
+        + lambda * penalty / (2.0 * sample_count);
 }
 
-int main() {
-    vector<double> actual = {2, 4, 5};
-    vector<double> predicted = {3, 5, 7};
-    vector<double> theta = {1, 2};
-
-    double lambda = 0.5;
-
-    cout << "Ridge Cost = "
-         << ridgeCost(actual, predicted, theta, lambda)
-         << endl;
-
-    return 0;
-}
+} // namespace ridge_ml

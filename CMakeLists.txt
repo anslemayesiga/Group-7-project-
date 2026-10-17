@@ -1,23 +1,31 @@
-cmake_minimum_required(VERSION 3.10)
-project(RidgeML_Library VERSION 1.0)
+cmake_minimum_required(VERSION 3.16)
+project(ridgelib VERSION 0.2.0 LANGUAGES CXX)
 
-# Force the project environment to build with standard modern C++17 properties
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# 1. Compile your reusable core ML library module targets 
-add_library(ridge_ml_lib 
+add_library(ridgelib
+    src/MinMaxScaler.cpp
     src/data_loader.cpp
+    src/gradient_descent.cpp
+    src/linear_regression.cpp
+    src/matrix.cpp
+    src/metrics.cpp
+    src/normal_equation.cpp
+    src/ridge_regression.cpp
+    src/ridge_regression_cost.cpp
+    src/tuning.cpp
 )
+add_library(ridgelib::ridgelib ALIAS ridgelib)
+target_include_directories(ridgelib PUBLIC include)
+target_compile_features(ridgelib PUBLIC cxx_std_17)
 
-# 2. Declare the public headers path so external applications can find module interface definitions
-target_include_directories(ridge_ml_lib PUBLIC include)
+add_executable(ridge_demo examples/ridge_demo.cpp)
+target_link_libraries(ridge_demo PRIVATE ridgelib::ridgelib)
 
-# 3. Create an executable process target to verify your unit tests automatically
-add_executable(test_data_loader 
-    tests/test_data_loader.cpp
-)
+add_executable(oop_demo examples/oop_demo.cpp)
+target_link_libraries(oop_demo PRIVATE ridgelib::ridgelib)
 
-# 4. Link your executable binary directly into the compiled library layer assets 
-target_link_libraries(test_data_loader PRIVATE ridge_ml_lib)
- 
+include(CTest)
+if(BUILD_TESTING)
+    add_executable(test_data_loader tests/test_data_loader.cpp)
+    target_link_libraries(test_data_loader PRIVATE ridgelib::ridgelib)
+    add_test(NAME data_loader_split COMMAND test_data_loader)
+endif()

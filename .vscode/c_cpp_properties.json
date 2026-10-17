@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "Group-7-project-ridge-lib",
+            "includePath": [
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/include/**"
+            ],
+            "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}

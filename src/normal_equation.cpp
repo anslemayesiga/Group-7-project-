@@ -1,69 +1,99 @@
-#include "../include/Group-7-project-ridge-lib/normal_equation.hpp"
+#include "Group-7-project-ridge-lib/normal_equation.hpp"
+
+#include <algorithm>
 #include <cmath>
+#include <limits>
 #include <stdexcept>
 
-namespace ridge {
+namespace ridge_ml {
 
-Vector gaussian_solve(const Matrix& A, const Vector& b) {
-    if (A.rows()!= A.cols())
-        throw std::invalid_argument("gaussian_solve: A must be square");
-    if (A.rows()!= b.size())
-        throw std::invalid_argument("gaussian_solve: size mismatch");
-
-    size_t n = A.rows();
-    // Make augmented matrix copy [A|b]
-    Matrix aug(n, n+1);
-    for (size_t i = 0; i < n; ++i) {
-        for (size_t j = 0; j < n; ++j) aug(i,j) = A(i,j);
-        aug(i,n) = b[i];
+Vector gaussian_solve(const Matrix& matrix, const Vector& right_hand_side) {
+    if (matrix.rows() == 0 || matrix.rows() != matrix.cols()) {
+        throw std::invalid_argument("Gaussian solve requires a non-empty square matrix");
+    }
+    if (matrix.rows() != right_hand_side.size()) {
+        throw std::invalid_argument("Gaussian solve right-hand side size mismatch");
     }
 
-    // Forward elimination with partial pivoting
-    for (size_t k = 0; k < n; ++k) {
-        // Find max pivot
-        size_t max_row = k;
-        double max_val = std::abs(aug(k,k));
-        for (size_t i = k+1; i < n; ++i) {
-            if (std::abs(aug(i,k)) > max_val) {
-                max_val = std::abs(aug(i,k));
-                max_row = i;
+    const std::size_t size = matrix.rows();
+    Matrix augmented(size, size + 1);
+    double matrix_scale = 0.0;
+
+    for (std::size_t i = 0; i < size; ++i) {
+        if (!std::isfinite(right_hand_side[i])) {
+            throw std::invalid_argument("Gaussian solve inputs must be finite");
+        }
+        for (std::size_t j = 0; j < size; ++j) {
+            const double value = matrix(i, j);
+            if (!std::isfinite(value)) {
+                throw std::invalid_argument("Gaussian solve inputs must be finite");
+            }
+            augmented(i, j) = value;
+            matrix_scale = std::max(matrix_scale, std::abs(value));
+        }
+        augmented(i, size) = right_hand_side[i];
+    }
+
+    const double tolerance = std::numeric_limits<double>::epsilon()
+        * std::max(matrix_scale, std::numeric_limits<double>::min())
+        * static_cast<double>(size) * 16.0;
+
+    for (std::size_t pivot = 0; pivot < size; ++pivot) {
+        std::size_t pivot_row = pivot;
+        double pivot_magnitude = std::abs(augmented(pivot, pivot));
+        for (std::size_t row = pivot + 1; row < size; ++row) {
+            const double candidate = std::abs(augmented(row, pivot));
+            if (candidate > pivot_magnitude) {
+                pivot_magnitude = candidate;
+                pivot_row = row;
             }
         }
-        if (max_val < 1e-12)
-            throw std::runtime_error("Singular matrix - XtX not invertible");
-
-        // Swap rows
-        if (max_row!= k) {
-            for (size_t j = k; j <= n; ++j)
-                std::swap(aug(k,j), aug(max_row,j));
+        if (pivot_magnitude <= tolerance) {
+            throw std::runtime_error("Gaussian solve encountered a singular matrix");
         }
 
-        // Eliminate
-        for (size_t i = k+1; i < n; ++i) {
-            double factor = aug(i,k) / aug(k,k);
-            for (size_t j = k; j <= n; ++j)
-                aug(i,j) -= factor * aug(k,j);
+        if (pivot_row != pivot) {
+            for (std::size_t col = 0; col <= size; ++col) {
+                std::swap(augmented(pivot, col), augmented(pivot_row, col));
+            }
+        }
+
+        for (std::size_t row = pivot + 1; row < size; ++row) {
+            const double factor = augmented(row, pivot) / augmented(pivot, pivot);
+            augmented(row, pivot) = 0.0;
+            for (std::size_t col = pivot + 1; col <= size; ++col) {
+                augmented(row, col) -= factor * augmented(pivot, col);
+            }
         }
     }
 
-    // Back substitution
-    Vector x(n);
-    for (int i = (int)n-1; i >= 0; --i) {
-        double sum = aug(i,n);
-        for (size_t j = i+1; j < n; ++j)
-            sum -= aug(i,j) * x[j];
-        x[i] = sum / aug(i,i);
+    Vector solution(size, 0.0);
+    for (std::size_t reverse = size; reverse-- > 0;) {
+        double value = augmented(reverse, size);
+        for (std::size_t col = reverse + 1; col < size; ++col) {
+            value -= augmented(reverse, col) * solution[col];
+        }
+        const double diagonal = augmented(reverse, reverse);
+        if (std::abs(diagonal) <= tolerance) {
+            throw std::runtime_error("Gaussian solve encountered a singular matrix");
+        }
+        solution[reverse] = value / diagonal;
     }
-    return x;
+    return solution;
 }
 
-Vector fit_normal_equation(const Matrix& X, const Vector& y) {
-    // theta = (X^T X)^-1 X^T y - using Person 1's API
-    Matrix Xt = X.transpose(); // Person 1
-    Matrix XtX = Xt * X; // Person 1: (n x m) * (m x n) = n x n
-    Vector Xty = Xt.multiply(y); // Person 1: (n x m) * (m) = n
+Vector fit_normal_equation(const Matrix& features, const Vector& targets) {
+    if (features.rows() == 0 || features.cols() == 0) {
+        throw std::invalid_argument("Normal equation requires non-empty features");
+    }
+    if (features.rows() != targets.size()) {
+        throw std::invalid_argument("Feature and target row counts must match");
+    }
 
-    return gaussian_solve(XtX, Xty); // My solver
+    const Matrix transpose = features.transpose();
+    const Matrix gram = transpose * features;
+    const Vector projected_targets = transpose.multiply(targets);
+    return gaussian_solve(gram, projected_targets);
 }
 
-}
+} // namespace ridge_ml

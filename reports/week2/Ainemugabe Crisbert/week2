@@ -1,4 +1,31 @@
-Ainemugabe Crisbert (23/U/27222/ps BELE)
-• Assigned Targets: tuning.hpp, tuning.cpp, test_tuning.cpp (Hyperparameter Grid-Search Optimizer)
-Week 2 contribution: I input dataset features, Grid of penalisation of weights,automated the testing controllers,performance comparison for the best hyperparameters.
-Week 3: Next task should focus on implementing, testing, and evaluating the hyperparameter-tuning controller.
+# Week 2 Individual Progress Report
+
+**Name:** Ainemugabe Crisbert  
+**Assigned module:** Hyperparameter tuning  
+**Reporting period:** 6-12 October 2026  
+**Evidence basis:** available Git history and existing member notes through 17 October.
+
+> Draft prepared from the available records. No commit in Git does not prove no offline work occurred. The named member should verify the record and add or correct any work done outside the repository before submission.
+
+## Completed / repository evidence
+
+- The Week 2 note reports preparing feature data, penalty grids, testing control, and parameter comparison. No tuning.hpp, tuning.cpp, or test_tuning.cpp commit appears in the Week 2 source history.
+
+## In Progress
+
+- The report describes tuning activity, but no corresponding code/test artifact is visible. Treat those items as reported but not repository-verified until the member links the files or commits.
+
+## Challenges/Blockers
+
+- Tuning depends on the ridge model and evaluation APIs, which were not integrated during this period.
+
+## Next Week - files to merge
+
+- include/ridge_ml/tuning.hpp, src/tuning.cpp, tests/test_tuning.cpp. Define the parameter grid and selection metric with the model/evaluation owners, then merge the tested implementation.
+
+## AI Use
+
+- No member AI-use declaration was found in the Week 2 note. OpenAI Codex drafted this evidence correction on 17 October; the member must add their own Week 2 project AI use.
+- Tool: OpenAI Codex.
+- Purpose: organize this report against the assignment split and available repository evidence.
+- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.

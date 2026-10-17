@@ -64,11 +64,11 @@ ridgelib/
 │   ├── scaler.hpp                 Kyelanyi Martin Tom
 │   ├── regressor.hpp              MUTYABA RASHID
 │   ├── linear_regression.hpp      KAMUGISHA ELIAS
-│   ├── solver.hpp                 SSEMWOGERERE OTHMAN
-│   ├── cost.hpp                   Khalid Taban Luate
-│   ├── ridge_regression.hpp       Khalid Taban Luate
+│   ├── solver.hpp                 Khalid Taban Luate
+│   ├── cost.hpp                   Mandela Nickson
+│   ├── ridge_regression.hpp        Mandela Nickson
 │   ├── gradient_descent.hpp       Tumwheire Desire
-│   ├── metrics.hpp                Mandela Nickson
+│   ├── metrics.hpp                Ssemwogerere Othman
 │   └── tuning.hpp                 Ainemugabe Crisbert
 │
 ├── src/                       implementations going to be used 
@@ -102,3 +102,4 @@ Purpose: To analysed the project instructions and summarized the requirements; e
 Reason: To understand the assignment and the machine learning concept 
 Purpose: Used it to generate the project skeleton (folder structure)
 Reason: To give all members one agreed interface to code against from day one.
+
