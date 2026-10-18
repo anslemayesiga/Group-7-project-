@@ -14,7 +14,7 @@
 
 - The Week 2 note describes grid-search activity, but the tuning controller and tests are not in the repository. Treat the activity as member-reported until the files or branch are linked.
 
-## Challenges/Blockers
+## Challenges/blockers
 
 - Tuning depends on a working ridge estimator and evaluation metric API.
 
