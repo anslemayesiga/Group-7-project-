@@ -4,6 +4,14 @@
 namespace linear_ml {
 
 Matrix NormalSolver::solve_normal_equation(const Matrix& X, const Matrix& y) {
+    // Week 2 Defensive Check: Dimension mismatches must fail immediately
+    if (X.rows() != y.rows()) {
+        throw std::invalid_argument("Normal Equation Input Error: X rows and y rows must match precisely.");
+    }
+    if (y.cols() != 1) {
+        throw std::invalid_argument("Normal Equation Input Error: Target matrix y must be a column vector matching dimensions (N x 1).");
+    }
+
     // 1. Compute X^T (Transpose of X)
     Matrix XT = X.transpose();
 
@@ -18,16 +26,12 @@ Matrix NormalSolver::solve_normal_equation(const Matrix& X, const Matrix& y) {
 }
 
 Matrix NormalSolver::solve_linear_system(const Matrix& A, const Matrix& b) {
-    // Assumes Matrix class provides rows(), cols(), get(r,c), set(r,c) methods
     int n = A.rows();
-    
-    // Create augmented-like working copies since we need to modify values
     Matrix M = A; 
     Matrix x_vec = b; 
 
     // Gaussian Elimination with Partial Pivoting
     for (int i = 0; i < n; ++i) {
-        // Find the pivot row
         int max_row = i;
         double max_val = std::abs(M.get(i, i));
         for (int k = i + 1; k < n; ++k) {
@@ -37,12 +41,10 @@ Matrix NormalSolver::solve_linear_system(const Matrix& A, const Matrix& b) {
             }
         }
 
-        // Check for singularity (near zero pivot element)
         if (max_val < 1e-9) {
             throw SingularMatrixException();
         }
 
-        // Swap rows in M and x_vec if needed
         if (max_row != i) {
             for (int j = 0; j < n; ++j) {
                 double temp = M.get(i, j);
@@ -54,7 +56,6 @@ Matrix NormalSolver::solve_linear_system(const Matrix& A, const Matrix& b) {
             x_vec.set(max_row, 0, temp_b);
         }
 
-        // Eliminate lower rows
         for (int k = i + 1; k < n; ++k) {
             double factor = M.get(k, i) / M.get(i, i);
             for (int j = i; j < n; ++j) {
@@ -67,7 +68,6 @@ Matrix NormalSolver::solve_linear_system(const Matrix& A, const Matrix& b) {
     }
 
     // Back Substitution
-    // Assuming Person 1's Matrix constructor allocates dimensions properly
     Matrix w(n, 1); 
     for (int i = n - 1; i >= 0; --i) {
         double sum = 0.0;
