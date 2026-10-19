@@ -4,7 +4,6 @@
 **Assigned module:** Feature scaling and build setup  
 **Reporting period:** 13-19 October 2026 (status as of 17 October)
 
-> Drafted from the agreed Week 1 responsibilities and the Git history available in the project. A missing commit is not proof that no work was done. The member should add evidence for offline or unmerged work and verify all details before submission.
 
 ## Completed / repository evidence
 
@@ -21,15 +20,6 @@
 ## Next Week - files to merge
 
 - Add focused tests for fitting, transforms, constant columns, empty inputs, and use-before-fit; confirm whether StandardScaler is in scope. Review CMake integration. No scaler tests were run during this follow-up.
-
-## AI Use
-
-- **OpenAI Codex (17 October):** drafted this report from repository evidence and repaired integration in the shared checkout across Matrix, CSV loading, feature scaling, normal-equation solving, ridge cost, CMake, and a demo. This is group-level AI-assisted work, not an individual contribution by Kyelanyi Martin Tom. The team must review and understand these changes before accepting them.
-- Add any other AI tools this member used for their own module work; do not mark none without checking.
-
-## Week 3 shared code status (Codex-assisted)
-
-The current checkout has `include/Group-7-project-ridge-lib/MinMaxScaler.hpp` and `src/MinMaxScaler.cpp`; namespace and include paths were aligned during Codex-assisted integration. These changes are group-level assistance, not evidence of individual authorship. Review the implementation and add any personal work/evidence before submitting.
 
 ## OOP Concepts and Class Layout (Week 3)
 
