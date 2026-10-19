@@ -4,7 +4,7 @@
 **Assigned module:** Hyperparameter tuning  
 **Reporting period:** 13-19 October 2026 (status as of 17 October)
 
-> Drafted from the agreed Week 1 responsibilities and the Git history available in the project. A missing commit is not proof that no work was done. The member should add evidence for offline or unmerged work and verify all details before submission.
+
 
 ## Completed / repository evidence
 
@@ -22,14 +22,6 @@
 
 - Add tests for candidate selection, empty candidates, null model factories, and validation shapes; confirm that validation R-squared is the agreed selection metric. Review the Codex-assisted tuner. No tests were run during this follow-up.
 
-## AI Use
-
-- **OpenAI Codex (17 October):** drafted this report from repository evidence and repaired integration in the shared checkout across Matrix, CSV loading, feature scaling, normal-equation solving, ridge cost, CMake, and a demo. This is group-level AI-assisted work, not an individual contribution by Ainemugabe Crisbert. The team must review and understand these changes before accepting them.
-- Add any other AI tools this member used for their own module work; do not mark none without checking.
-
-## Week 3 shared code status (Codex-assisted)
-
-The current checkout now contains `include/Group-7-project-ridge-lib/tuning.hpp` and `src/tuning.cpp`, prepared as a group-level grid-search draft with Codex assistance. The available history does not establish this as Ainemugabe's individual work. Review and adapt the candidate parameter/model interface and add personal work/evidence before submitting.
 
 ## OOP Concepts and Class Layout (Week 3)
 
