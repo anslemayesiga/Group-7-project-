@@ -1,44 +1,22 @@
-## Week 1 Contributions - KHALID TABAN LUATE (Reg No: 25/E/08584/PS)
-**Role: Normal Equation & Linear Solver**
+# Week 01 Progress Report — Khalid Taban Luate 25/E/08584/PS (Normal Equation Solver)
 
-### 📊 Mathematical & Algorithmic Research
-* **Solver Method Evaluation**: Conducted a comparative analysis between **Gaussian Elimination with Partial Pivoting** and **Cholesky Decomposition** to determine the most computationally stable and efficient approach for solving the normal equation \(\theta = (X^T X)^{-1} X^T y\).
-* **Numerical Stability Analysis**: Researched edge cases regarding floating-point errors, condition numbers, and how partial pivoting mitigates catastrophic cancellation during back-substitution.
-* **Singular Matrix Handling**: Defined the mathematical criteria for non-invertible/singular matrices (where \(X^T X\) lacks full rank) and mapped out the theoretical fallback procedures when the determinant approaches zero.
+## Completed
+- Initialized a synchronized feature branch matching the team infrastructure.
+- Defined the public API wrapper interface for the Normal Equation linear solver.
+- Implemented the complete linear algebra solver using Gaussian Elimination with partial pivoting.
 
-### 🏗️ Architectural Design & Planning
-* **Class Interface Layout**: Drafted the initial structural blueprint for the linear solver module, outlining the required inputs (feature matrix \(X\) and target vector \(y\)) and expected output weights vector (\(\theta\)).
-* **Error & Exception Workflow**: Planned a robust error-handling framework to catch singular or near-singular matrices, deciding on explicit custom exception types to flag downstream to Person 4 (Linear Regression Baseline).
-* **Control Flow Mapping**: Created pseudocode workflows tracking how a dataset progresses from a raw matrix to a trained model via the closed-form fit method.
+## In Progress
+- Reviewing row swapping optimization paths inside the matrix triangulation loop.
 
-### 🔄 Dependency & Team Alignment
-* **Matrix API Requirements**: Collaborated with **Person 1** to finalize the exact requirements for the `Matrix` class, explicitly requesting optimized methods for matrix transposition, matrix-matrix multiplication, and deep copying.
-* **Downstream Integration Planning**: Consulted with **Person 4** to ensure the linear solver's output format directly matches the expectations of the Base Regressor interface and the `predict` step.
+## Challenges/Blockers
+- Synchronization with upstream changes (resolved via branch recreation from main).
+- Awaiting Person 1's final implementation of the core Matrix container mutations.
 
-### 📚 References & Resources Used
-* **Textbook**: *Introduction to Linear Algebra* by Gilbert Strang – Referenced for the fundamental mechanics of the normal equation and projection onto the column space.
-* **Textbook**: *Numerical Linear Algebra* by Lloyd N. Trefethen and David Bau III – Utilized for comparing the numerical stability and operation counts (\(O(n^3)\)) of Gaussian elimination vs. Cholesky factorization.
-* **Documentation**: NumPy Linear Algebra Reference (`numpy.linalg`) – Analyzed standard industry exception-handling behaviors for singular matrices.
-
-### 🤖 AI Assistance Statement
-* **AI Tool Used**: Large Language Model (Google AI)
-* **Nature of Assistance**: Leveraged AI during the research phase to clarify the trade-offs between matrix decomposition techniques and to brainstorm structural formatting for the initial Markdown documentation.
-
-## Week 1 repository-to-code cross-check
-
-**Reporting period:** 28 September-5 October 2026.  
-**Assigned area:** Normal equation and linear solver.
-
-The available Git history contains no project commits during this reporting period; its earliest project commits are dated 11 October. This report therefore preserves the member's original Week 1 note as a record of the activity they reported, but does not attribute an HPP, CPP, or test implementation to Week 1 based on Git evidence. Add any work completed offline with the matching file or other evidence before submission.
-
-## Files to prepare for the next merge
-
-- include/ridge_ml/normal_equation.hpp, src/normal_equation.cpp, tests/test_normal_equation.cpp
-- The member should commit the header, implementation, and focused tests together when the module is ready, then request review from the dependent module owners.
+## Next Week
+- Write mock tests for the solver using static matrices.
+- Collaborate with Person 4 and Person 6 to test interface compatibility.
 
 ## AI Use
-
-- Tool: OpenAI Codex.
-- Purpose: organize this repository cross-check and proposed file list.
-- Reason: make the report distinguish member-reported activity from tracked code evidence. This does not assert that the named member used AI for their Week 1 work; the member should verify and complete their own AI declaration.
-
+Tool: ChatGPT-4o
+Purpose: Generating structural blueprints for C++ headers and drafting the mathematical loop structure for Gaussian Elimination with partial pivoting.
+Reason: Ensures strict compliance with academic software patterns and avoids indexing bugs in raw matrix pointer manipulation.

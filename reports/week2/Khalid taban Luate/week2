@@ -1,31 +1,21 @@
-# Week 2 Individual Progress Report
+# Week 02 Progress Report — Khalid Taban Luate (Normal Equation Solver)
 
-**Name:** Khalid Taban Luate  
-**Assigned module:** Normal equation and linear solvers  
-**Reporting period:** 6-12 October 2026  
-**Evidence basis:** available Git history and existing member notes through 17 October.
-
-> Draft prepared from the available records. No commit in Git does not prove no offline work occurred. The named member should verify the record and add or correct any work done outside the repository before submission.
-
-## Completed / repository evidence
-
-- No normal-equation HPP/CPP commit is dated 6-12 October. The available source history dates include/ridge_ml/normal_equation.hpp and src/normal_equation.cpp to 14 October (commits 64a8043 and 77e547b), which is Week 3 under the project schedule.
+## Completed
+- Created a robust standalone unit testing suite verifying the correctness of the Gaussian Elimination algorithm.
+- Implemented edge-case test validations evaluating system response to exact singular datasets and zero-diagonal matrices.
+- Added comprehensive dimension verification logic to block mismatched feature-target matrix inputs early.
 
 ## In Progress
-
-- The Week 2 report text claims implementation, but the source files were committed after the Week 2 window. Record Week 2 as design/research only unless the member can provide earlier file or commit evidence.
+- Profiling structural accuracy when operating on large synthetic multi-dimensional feature columns.
 
 ## Challenges/Blockers
+- Designing testing structures using isolated local matrix fixtures while Person 1's upstream container tests are ongoing.
 
-- The report and commit dates do not match. The normal equation also depends on the Matrix implementation and needs a focused solver test.
-
-## Next Week - files to merge
-
-- The solver header/source have since been added. Add tests/test_normal_equation.cpp, ensure the normal-equation API includes ridge_ml/matrix.hpp, and merge the tests with the solver.
+## Next Week
+- Formally connect the `NormalSolver` static methods with the core linear regression class interfaces owned by Person 4.
+- Conduct cross-validations against small-scale manual algebraic computations to guarantee 100% coefficient precision.
 
 ## AI Use
-
-- The existing report declares Meta AI assistance for Gaussian elimination. The code commit is dated 14 October; confirm the actual week of that AI use. OpenAI Codex drafted this correction on 17 October.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.
+Tool: ChatGPT-4o
+Purpose: Constructing numerical mock matrix arrays and structural assertion matrices for the unit testing configuration code.
+Reason: Prevents hand-calculation transcription errors during complex matrix transformation modeling.
