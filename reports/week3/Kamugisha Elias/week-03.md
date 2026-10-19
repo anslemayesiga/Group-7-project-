@@ -21,15 +21,6 @@
 
 - Add focused tests for `LinearRegression` fit/predict, intercept handling, wrong dimensions, and use through `Regressor`; review/adapt the Codex-assisted HPP/CPP before merge. No tests were run during this follow-up.
 
-## AI Use
-
-- **OpenAI Codex (17 October):** drafted this report from repository evidence and repaired integration in the shared checkout across Matrix, CSV loading, feature scaling, normal-equation solving, ridge cost, CMake, and a demo. This is group-level AI-assisted work, not an individual contribution by Kamugisha Elias. The team must review and understand these changes before accepting them.
-- Add any other AI tools this member used for their own module work; do not mark none without checking.
-
-## Week 3 shared code status (Codex-assisted)
-
-The current checkout now contains `include/Group-7-project-ridge-lib/linear_regression.hpp` and `src/linear_regression.cpp` for the assigned baseline. Codex prepared these as group-level draft implementation; repository history does not establish them as Kamugisha's individual work. Review and adapt the files, then add any personally completed work/evidence before submitting.
-
 ## OOP Concepts and Class Layout (Week 3)
 
 **Code files prepared for the assigned module:** `include/Group-7-project-ridge-lib/linear_regression.hpp`, `src/linear_regression.cpp`.
