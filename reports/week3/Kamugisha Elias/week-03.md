@@ -4,7 +4,6 @@
 **Assigned module:** Linear regression baseline  
 **Reporting period:** 13-19 October 2026 (status as of 17 October)
 
-> Drafted from the agreed Week 1 responsibilities and the Git history available in the project. A missing commit is not proof that no work was done. The member should add evidence for offline or unmerged work and verify all details before submission.
 
 ## Completed / repository evidence
 
