@@ -38,5 +38,3 @@ The current checkout now contains `include/Group-7-project-ridge-lib/tuning.hpp`
 - **Encapsulation:** `GridSearchTuner` stores its model factory privately and exposes a public search method. `GridSearchResult` returns the best parameter, score, and model using public fields.
 - **Runtime polymorphism:** The tuner creates and uses models through `std::unique_ptr<Regressor>`, calling virtual `fit` and `predict`. It has no inheritance relationship itself.
 - **Layout to draw:** `GridSearchTuner` private `factory_`; public `ModelFactory`, constructor, and `fit`. `GridSearchResult` public `best_parameter`, `best_score`, and `best_model`. The model base is `Regressor`.
-
-These files were prepared with OpenAI Codex assistance for the group. Review and understand them before claiming individual authorship. Draw the actual class layout by hand and add a clear photo. See [shared class-layout guide](../class-layouts.md#ainemugabe-crisbert-hyperparameter-tuning).
