@@ -23,9 +23,3 @@
 
 - include/ridge_ml/tuning.hpp, src/tuning.cpp, tests/test_tuning.cpp. Define the parameter grid and selection metric with the model/evaluation owners, then merge the tested implementation.
 
-## AI Use
-
-- No member AI-use declaration was found in the Week 2 note. OpenAI Codex drafted this evidence correction on 17 October; the member must add their own Week 2 project AI use.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.

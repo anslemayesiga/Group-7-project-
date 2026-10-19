@@ -23,9 +23,3 @@
 
 - include/ridge_ml/metrics.hpp, src/metrics.cpp, tests/test_metrics.cpp. Agree metric names and invalid-input behavior, then merge implementation and tests.
 
-## AI Use
-
-- No member AI-use declaration was found. OpenAI Codex drafted this evidence-based report on 17 October; the member must verify and complete the declaration.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.

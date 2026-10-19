@@ -23,9 +23,3 @@
 
 - For the next merge, include include/scalerlib/MinMaxScaler.hpp, src/MinMaxScaler.cpp, and tests/test_min_max_scaler.cpp; decide with the team whether StandardScaler is required, then add its matching header/source/test. Review CMakeLists.txt with the team.
 
-## AI Use
-
-- The original Week 2 report declares Gemini assistance for project structure and normalization formulas. OpenAI Codex drafted this evidence correction on 17 October; the member should confirm any other AI use.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.

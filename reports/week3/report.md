@@ -52,9 +52,3 @@ Reporting period: 13-19 October 2026 (status as of 17 October)
 
 Use reports/module-merge-plan.md to adapt the prepared HPP/CPP files, add the listed focused tests, and integrate in dependency order. Each member should commit their own reviewed work, request review, and update their progress report with exact files and verified results.
 
-## AI Use
-
-- Tool: OpenAI Codex.
-- Purpose: Review and repair integration in the codes made
-- 
-

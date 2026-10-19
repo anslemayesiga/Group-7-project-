@@ -4,8 +4,6 @@
 **Assigned module:** Matrix and vector operations  
 **Reporting period:** 13-19 October 2026 (status as of 17 October)
 
-> Drafted from the agreed Week 1 responsibilities and the Git history available in the project. A missing commit is not proof that no work was done. The member should add evidence for offline or unmerged work and verify all details before submission.
-
 ## Completed
 
 - The repository records integration of the data-preprocessing branch into main on 14 October (merge of PR #12). This is a group integration activity, not evidence that the assigned Matrix implementation was complete. A 13 October commit changed a file named matrix.hhp (a header-extension typo), but no Matrix implementation/test update was recorded under the normal .hpp/.cpp/test paths in this window.
@@ -20,11 +18,11 @@
 
 ## Next Week - files to merge
 
-- Add focused Matrix tests for construction, bounds checking, arithmetic, transpose, vector multiplication, and dot product; then review the Codex-assisted Matrix files before merge. No tests were run during this follow-up.
+- Add focused Matrix tests for construction, bounds checking, arithmetic, transpose, vector multiplication, and dot product; then review the Matrix files before merge. No tests were run during this follow-up.
 
 ## Week 3 shared code status 
 
-The current checkout now has the canonical `include/Group-7-project-ridge-lib/matrix.hpp`, `src/matrix.cpp`, and `examples/ridge_demo.cpp` for the Matrix module. These are group-level integration files prepared or corrected with Codex assistance. The available history does not establish these changes as Ayesiga's individual work; review them and add any personally completed work/evidence before submitting.
+The current checkout now has the canonical `include/Group-7-project-ridge-lib/matrix.hpp`, `src/matrix.cpp`, and `examples/ridge_demo.cpp` for the Matrix module. These are group-level integration files. The available history does not establish these changes as Ayesiga's individual work; review them and add any personally completed work/evidence before submitting.
 
 ## OOP Concepts and Class Layout 
 

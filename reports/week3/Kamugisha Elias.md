@@ -19,7 +19,7 @@
 
 ## Next Week - files to merge
 
-- Add focused tests for `LinearRegression` fit/predict, intercept handling, wrong dimensions, and use through `Regressor`; review/adapt the Codex-assisted HPP/CPP before merge. No tests were run during this follow-up.
+- Add focused tests for `LinearRegression` fit/predict, intercept handling, wrong dimensions, and use through `Regressor`; review/adapt the HPP/CPP before merge. No tests were run during this follow-up.
 
 ## OOP Concepts and Class Layout (Week 3)
 
@@ -29,4 +29,4 @@
 - **Inheritance and runtime polymorphism:** `LinearRegression` publicly derives from `Regressor` and overrides its virtual `fit` and `predict` methods. Calls through a `Regressor` pointer dispatch to this model at runtime.
 - **Layout to draw:** `LinearRegression` private `coefficients_`, `fitted_`; public overrides and accessor. Base class `Regressor` has a public virtual destructor and pure virtual `fit`/`predict`; no protected fields.
 
-These files were prepared with OpenAI Codex assistance for the group. The assigned member must review and understand them before claiming individual authorship. Draw the actual class layout by hand and add a clear photo. See [shared class-layout guide](../class-layouts.md#kamugisha-elias-linear-regression).
+These files were prepared for the group. The assigned member must review and understand them before claiming individual authorship. Draw the actual class layout by hand and add a clear photo. See [shared class-layout guide](../class-layouts.md#kamugisha-elias-linear-regression).

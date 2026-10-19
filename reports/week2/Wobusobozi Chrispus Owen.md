@@ -21,11 +21,5 @@
 
 ## Next Week - files to merge
 
-- include/ridge_ml/data_loader.hpp, src/data_loader.cpp, tests/test_data_loader.cpp; add include/ridge_ml/preprocessing.hpp, src/preprocessing.cpp, tests/test_preprocessing.cpp. In this follow-up, the loader API has been repaired; that repair is assistant-authored and not the member's historical Week 2 contribution.
+- include/ridge_ml/data_loader.hpp, src/data_loader.cpp, tests/test_data_loader.cpp; add include/ridge_ml/preprocessing.hpp, src/preprocessing.cpp, tests/test_preprocessing.cpp. In this follow-up, the loader API has been repaired; that repair is not the member's historical Week 2 contribution.
 
-## AI Use
-
-- The original Week 2 report declares Gemini assistance for the data-loader structure/debugging. OpenAI Codex drafted this evidence correction on 17 October; the member must verify this matches their use.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.

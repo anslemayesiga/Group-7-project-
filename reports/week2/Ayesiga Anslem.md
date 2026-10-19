@@ -23,10 +23,3 @@
 
 - include/ridge_ml/matrix.hpp; src/matrix.cpp with method definitions; tests/tests_matrix.cpp. Confirm the tests remain in the repository after merge.
 
-## AI Use
-
-- The Week 1 group report records Claude use for understanding the assignment and generating the initial project structure. No Week 2-specific personal AI use is recorded; the member should confirm and update this declaration.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.
-

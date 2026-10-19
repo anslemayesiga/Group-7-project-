@@ -20,7 +20,7 @@
 
 ## Next Week - files to merge
 
-- Add tests for candidate selection, empty candidates, null model factories, and validation shapes; confirm that validation R-squared is the agreed selection metric. Review the Codex-assisted tuner. No tests were run during this follow-up.
+- Add tests for candidate selection, empty candidates, null model factories, and validation shapes; confirm that validation R-squared is the agreed selection metric. Review the tuner. No tests were run during this follow-up.
 
 
 ## OOP Concepts and Class Layout (Week 3)

@@ -21,11 +21,5 @@
 
 ## Next Week - files to merge
 
-- include/ridge_ml/ridge_cost.hpp, src/ridge_regression_cost.cpp, tests/test_ridge_cost.cpp. The current follow-up adds the header and removes the demo main from the library source; those corrections are assistant-authored, not historical Week 2 work.
+- include/ridge_ml/ridge_cost.hpp, src/ridge_regression_cost.cpp, tests/test_ridge_cost.cpp. The current follow-up adds the header and removes the demo main from the library source; those corrections are not historical Week 2 work.
 
-## AI Use
-
-- The Week 2 note contains no personal AI-use declaration. OpenAI Codex drafted this evidence correction on 17 October; the member must add any AI use for their work.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.

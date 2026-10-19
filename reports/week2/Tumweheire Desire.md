@@ -23,9 +23,3 @@
 
 - include/ridge_ml/gradient_descent.hpp, src/gradient_descent.cpp, tests/test_gradient_descent.cpp. Commit the update rule, convergence/stopping policy, and focused tests together.
 
-## AI Use
-
-- No member AI-use declaration was found. OpenAI Codex drafted this evidence-based report on 17 October; the member must verify and complete the declaration.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.

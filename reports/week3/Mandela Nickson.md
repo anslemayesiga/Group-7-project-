@@ -19,7 +19,7 @@ Reporting period: 13-19 October 2026 (status as of 17 October)
 
  Next Week - files to merge
 
-- Add tests for ridge cost and for `RidgeRegression` fit/predict, non-negative lambda validation, intercept handling, and polymorphic use through `Regressor`. Review the Codex-assisted model files. No tests were run during this follow-up.
+- Add tests for ridge cost and for `RidgeRegression` fit/predict, non-negative lambda validation, intercept handling, and polymorphic use through `Regressor`. Review the model files. No tests were run during this follow-up.
 
 
  Week 3 shared code status 

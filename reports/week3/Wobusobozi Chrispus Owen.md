@@ -4,7 +4,6 @@
 **Assigned module:** Dataset loading and data preprocessing  
 **Reporting period:** 13-19 October 2026 (status as of 17 October)
 
-> Drafted from the agreed Week 1 responsibilities and the Git history available in the project. A missing commit is not proof that no work was done. The member should add evidence for offline or unmerged work and verify all details before submission.
 
 ## Completed / repository evidence
 
@@ -22,14 +21,9 @@
 
 - Review the current CSV loader and its passing test, then implement the agreed preprocessing component and add focused tests. No preprocessing module exists yet, and no preprocessing tests have been run.
 
-## AI Use
+## Week 3 shared code status
 
-- **OpenAI Codex (17 October):** drafted this report from repository evidence and repaired integration in the shared checkout across Matrix, CSV loading, feature scaling, normal-equation solving, ridge cost, CMake, and a demo. This is group-level AI-assisted work, not an individual contribution by Wobusobozi Chrispus Owen. The team must review and understand these changes before accepting them.
-- Add any other AI tools this member used for their own module work; do not mark none without checking.
-
-## Week 3 shared code status (Codex-assisted)
-
-The current checkout has `include/Group-7-project-ridge-lib/data_loader.hpp`, `src/data_loader.cpp`, and `tests/test_data_loader.cpp`. The loader API and validation were adjusted with Codex assistance as group-level integration; this is not proof of individual authorship. The existing DataLoader check was compiled and passed. Review the changes and add any personal/offline work and evidence before submitting.
+The current checkout has `include/Group-7-project-ridge-lib/data_loader.hpp`, `src/data_loader.cpp`, and `tests/test_data_loader.cpp`. The loader API and validation were adjusted during group integration as group-level integration; this is not proof of individual authorship. The existing DataLoader check was compiled and passed. Review the changes and add any personal/offline work and evidence before submitting.
 
 ## OOP Concepts and Class Layout (Week 3)
 

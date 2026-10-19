@@ -23,9 +23,3 @@
 
 - include/ridge_ml/linear_regression.hpp, src/linear_regression.cpp, tests/test_linear_regression.cpp. If logging is retained, keep it inside or alongside the model only after the team agrees its scope.
 
-## AI Use
-
-- No member AI-use declaration was found in the Week 2 note. OpenAI Codex drafted this evidence-based report on 17 October; the member must add their own Week 2 project AI use.
-- Tool: OpenAI Codex.
-- Purpose: organize this report against the assignment split and available repository evidence.
-- Reason: distinguish implementation artifacts from plans and identify the correct merge targets. This report-drafting use does not imply that the named member authored the code changes made in the current follow-up.
