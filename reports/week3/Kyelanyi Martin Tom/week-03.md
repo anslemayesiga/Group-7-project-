@@ -40,4 +40,4 @@ The current checkout has `include/Group-7-project-ridge-lib/MinMaxScaler.hpp` an
 - **Inheritance:** None; there is no base/derived relationship or `protected` member.
 - **Layout to draw:** `MinMaxScaler` with those three private data members and the three public scaling methods. No protected members.
 
-Draw this actual class layout by hand and add a clear photo to this report before submission. See [shared class-layout guide](../class-layouts.md#kyelanyi-martin-tom-minmaxscaler).
+.
