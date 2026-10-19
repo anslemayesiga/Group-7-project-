@@ -29,8 +29,8 @@ The current checkout contains `ridge_cost.hpp`, `ridge_regression_cost.cpp`, `ri
  OOP Concepts and Class Layout (Week 3)
 Code files prepared for the assigned module: `include/Group-7-project-ridge-lib/ridge_cost.hpp`, `src/ridge_regression_cost.cpp`, `include/Group-7-project-ridge-lib/ridge_regression.hpp`, and `src/ridge_regression.cpp`.
 
-- Encapsulation:** `RidgeRegression` keeps `lambda_`, fitted coefficients, and fitted state private. Public methods expose fitting, prediction, and read-only accessors.
+- Encapsulation: `RidgeRegression` keeps `lambda_`, fitted coefficients, and fitted state private. Public methods expose fitting, prediction, and read-only accessors.
 - Inheritance and runtime polymorphism: `RidgeRegression` publicly derives from abstract `Regressor` and overrides virtual `fit` and `predict`. The separate `ridge_cost` helper remains a free function.
 - Layout to draw: `RidgeRegression` derives from `Regressor`; private `lambda_`, `coefficients_`, `fitted_`; public constructor, `fit`, `predict`, `coefficients`, `lambda`.
 
-The new model files were prepared with OpenAI Codex assistance for the group. Review and understand them before claiming individual authorship. Draw the actual class layout by hand and add a clear photo. See [shared class-layout guide](../class-layouts.md#mandela-nickson-ridge-regression).
+
