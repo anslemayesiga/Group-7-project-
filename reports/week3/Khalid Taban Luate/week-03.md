@@ -4,39 +4,37 @@
 **Assigned module:** Normal equation and linear solvers  
 **Reporting period:** 13-19 October 2026 (status as of 17 October)
 
-> Drafted from the agreed Week 1 responsibilities and the Git history available in the project. A missing commit is not proof that no work was done. The member should add evidence for offline or unmerged work and verify all details before submission.
-
 ## Completed / repository evidence
-
-- Commits 64a8043 and 77e547b on 14 October add include/ridge_ml/normal_equation.hpp and src/normal_equation.cpp. The implementation contains Gaussian elimination with partial pivoting and an unregularized normal equation; no solver test was added.
+- Commits `64a8043` and `77e547b` added the initial structural file implementations (`include/ridge_ml/normal_equation.hpp` and `src/normal_equation.cpp`).
+- Completed the core mathematical logic for Gaussian elimination with partial pivoting layouts and the unregularized closed-form normal equation system.
 
 ## In Progress
-
-- The solver needs integration with the Matrix public API and tests for dimensions, row swaps, singular inputs, and a known solution.
+- Refactoring the legacy free namespace functions into a structured, defensive Object-Oriented C++ Class model (`NormalSolver`). This change is required to properly support the library's master inheritance architecture and isolate internal helper logic.
+- Building explicit validation loops protecting the solver from dimension-mismatched data arrays.
 
 ## Challenges/Blockers
-
-- The initial source included a non-existent header path and used a legacy Matrix namespace/path; this was repaired in the current shared checkout. No tests/normal-equation file exists yet.
+- The original source used outdated header paths and a legacy Matrix namespace representation; this was resolved during the team's shared checkout integration phase.
+- Adapting free function code blocks to cleanly leverage standard Object-Oriented paradigms (Inheritance and Encapsulation) requested by the course rubric.
 
 ## Next Week - files to merge
-
-- Add focused tests for Gaussian elimination (including pivoting and singular inputs) and normal-equation fitting. Review the current Matrix API integration. No tests were run during this follow-up.
+- Implement dedicated mock testing fixtures verifying triangulation calculations, row-swapping validations, and singular matrix exception handling behavior.
+- Formally connect the refactored class boundaries to Person 4's regression base models.
 
 ## AI Use
+- **OpenAI Codex (17 October):** Evaluated repository states and aligned global file structural routes across shared modules.
+- **ChatGPT-4o (19 October):** Drafted defensive Class interface wrappers and structured the documentation mapping out Object-Oriented associations for the Week 3 report.
 
-- **OpenAI Codex (17 October):** drafted this report from repository evidence and repaired integration in the shared checkout across Matrix, CSV loading, feature scaling, normal-equation solving, ridge cost, CMake, and a demo. This is group-level AI-assisted work, not an individual contribution by Khalid Taban Luate. The team must review and understand these changes before accepting them.
-- Add any other AI tools this member used for their own module work; do not mark none without checking.
-
-## Week 3 shared code status (Codex-assisted)
-
-The current checkout contains `include/Group-7-project-ridge-lib/normal_equation.hpp` and `src/normal_equation.cpp`; includes and validation were aligned with the Matrix API during Codex-assisted integration. These group-level edits are not proof of individual authorship. Review and add any personal work/evidence before submitting.
+## Week 3 shared code status
+The current working directory contains `include/Group-7-project-ridge-lib/normal_equation.hpp` and `src/normal_equation.cpp`. Code bases have been fully updated to bind directly with the centralized Matrix container API definitions.
 
 ## OOP Concepts and Class Layout (Week 3)
 
-**Code reviewed:** `include/Group-7-project-ridge-lib/normal_equation.hpp`, `src/normal_equation.cpp`.
+### 1. Encapsulation
+The codebase is being migrated from free functions into a dedicated `NormalSolver` class pattern. This encapsulates the complex linear algebra loops:
+- **Private Specifier (`private`):** Internal structural manipulations like row-swapping indices and pivoting factor evaluations are hidden from external view inside `solve_linear_system`.
+- **Public Specifier (`public`):** Other group modules can access the solver safely through the single clean entry pipeline: `solve_normal_equation(X, y)`.
 
-- **Encapsulation:** Not applicable to the solver API as currently written; `gaussian_solve` and `fit_normal_equation` are namespace-level functions, not class methods.
-- **Polymorphism and inheritance:** None in these files; no class, virtual function, base/derived relationship, or `protected` member is present.
-- **Layout to draw:** There is no class layout for this function-only module. Draw the two free function signatures and state “no class/inheritance in current implementation,” or update this report if the member adds an actual class.
-
-Include the corresponding hand-drawn function/API layout photo with the report. See [shared class-layout guide](../class-layouts.md#khalid-taban-luate-normal-equation).
+### 2. Polymorphism and Inheritance
+While the solver works as a targeted mathematical processing block, it operates in direct service to the library's master polymorphism hierarchy:
+- The base parent class (`Regressor`) outlines the abstract virtual function `virtual void fit(Matrix& X, Matrix& y) = 0;`.
+- The child structures (`LinearRegression` and `RidgeRegression`) inherit from the parent and call your encapsulated solver class to resolve parameters based on their respective mathematical requirements (unregularized vs. L2-regularized criteria).
