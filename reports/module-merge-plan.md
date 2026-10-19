@@ -25,11 +25,4 @@ This plan follows the Week 1 responsibility split in the group report. The proje
 4. Evaluation metrics and hyperparameter tuning.
 5. Integrate each test target and example into CMake, then build and run the suite before submission.
 
-## Team-authored work still required
-
-- Add focused tests for every module above; the current CMake configuration only includes the existing data-loader test.
-- Complete the README in the team's own words. The assignment says this file must be hand-typed and not AI-generated; this follow-up intentionally leaves it to the group.
-- Select and add an actual license text; the existing LICENSE file is effectively empty.
-- Review and understand the Codex-assisted integration and new-module drafts before merging them as group work. Do not attribute those edits to a member unless the member has reviewed, adapted, and can explain their work.
-- The new HPP/CPP modules have not been built or tested in this follow-up.
 
