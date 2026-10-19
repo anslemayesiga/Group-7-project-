@@ -33,8 +33,7 @@ The current checkout now has the canonical `include/Group-7-project-ridge-lib/ma
 - **Encapsulation:** Implemented. `Matrix` keeps `rows_`, `cols_`, `values_`, and the bounds-checking `index()` helper private. Constructors and matrix operations are public.
 - **Polymorphism:** The matrix operators (`+`, `-`, `*`) are overloaded for matrix and scalar operands. This is compile-time operator overloading, not virtual runtime polymorphism.
 - **Inheritance:** None in the current Matrix code; there is no base or derived class, and no `protected` member.
-- **Layout to draw:** `Matrix` with private fields `rows_: size_t`, `cols_: size_t`, `values_: vector<double>`, `index(row,col): size_t`; public constructors, `identity`, `rows`, `cols`, `operator()`, `transpose`, arithmetic operators, `multiply`, `column`, and `row`. Free functions: scalar-left multiply and `dot`.
 
-Draw this actual class layout by hand and add a clear photo to this report before submission. See [shared class-layout guide](../class-layouts.md#ayesiga-anslem-matrix).
+<img width="1080" height="1080" alt="WhatsApp Image 2026-10-19 at 5 28 47 PM" src="https://github.com/user-attachments/assets/c91e5802-83a2-47a7-9adb-7a75daf14578" />
 
 
