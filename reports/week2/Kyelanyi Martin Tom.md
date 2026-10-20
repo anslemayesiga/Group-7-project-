@@ -1,0 +1,25 @@
+# Week 2 Individual Progress Report
+
+**Name:** Kyelanyi Martin Tom  
+**Assigned module:** Feature scaling and CMake setup  
+**Reporting period:** 6-12 October 2026  
+**Evidence basis:** available Git history and existing member notes through 17 October.
+
+> Draft prepared from the available records. No commit in Git does not prove no offline work occurred. The named member should verify the record and add or correct any work done outside the repository before submission.
+
+## Completed / repository evidence
+
+- No scaler HPP/CPP/test commit is dated within 6-12 October in the available history. The first tracked scaler files and CMake change are in commit 417d6dc dated 13 October, which is Week 3 under the project schedule.
+
+## In Progress
+
+- The Week 2 note describes project-structure and API planning, and lists MinMaxScaler and StandardScaler interfaces. The repository does not show those scaler files until 13 October; only MinMaxScaler files are in the later project tree.
+
+## Challenges/Blockers
+
+- The scaler implementation and tests were not present in the Week 2 merge window. StandardScaler is also mentioned in the note but absent from the repository.
+
+## Next Week - files to merge
+
+- For the next merge, include include/scalerlib/MinMaxScaler.hpp, src/MinMaxScaler.cpp, and tests/test_min_max_scaler.cpp; decide with the team whether StandardScaler is required, then add its matching header/source/test. Review CMakeLists.txt with the team.
+

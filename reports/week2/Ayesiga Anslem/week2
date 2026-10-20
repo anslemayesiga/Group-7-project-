@@ -1,7 +1,0 @@
-focused mainly on the matrix.hpp file code 
-where l created a private and public class matrix 
-that will help out on the efficient runnning of my matrix.cpp
-in the public sector l included codes that will be easily assesed by the complier  such codes included the matrix and vectoer operators 
-In the private sector l included the rows and column sizes , and the vector data that wont be accessed by the complier
-next week##
-focus is on formulating my matrix.cpp and carrying out some tests in the test.cpp 

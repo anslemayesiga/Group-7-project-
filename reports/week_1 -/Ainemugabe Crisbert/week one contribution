@@ -1,5 +1,0 @@
-Ainemugabe Crisbert (23/U/27222/ps BELE)
-• Assigned Targets: tuning.hpp, tuning.cpp, test_tuning.cpp (Hyperparameter Grid-Search Optimizer)
-• Week 1 Activity: Designed validation loop layouts within tuning.hpp to evaluate regularization alpha performance transitions across variable ranges.
-• Next Week Plan: Build automated grid validation controllers to cycle testing execution iterations across arrays of testing penalization weights.
-
