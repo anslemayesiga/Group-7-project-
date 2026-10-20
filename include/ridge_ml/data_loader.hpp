@@ -10,7 +10,6 @@ class DataLoader {
 public:
     DataLoader() = default;
 
-    // Structure to hold split train and test data matrices
     struct SplitResult {
         std::vector<std::vector<double>> X_train_raw;
         std::vector<std::vector<double>> X_test_raw;
@@ -18,17 +17,19 @@ public:
         std::vector<double> y_test;
     };
 
-    // Reads a CSV file row by row and populates internal structures
     void loadCSV(const std::string& filepath, bool has_header = true);
-
-    // Splits features matrix and target vectors based on a percentage size (e.g. 0.8)
+    void handleMissingValues();
+    std::vector<std::vector<double>> extractFeatures(size_t target_column_idx);
+    std::vector<double> extractTargetColumn(size_t column_idx);
     SplitResult trainTestSplit(const std::vector<std::vector<double>>& full_features, 
                                const std::vector<double>& full_targets, 
                                double train_size = 0.8);
 
+    const std::vector<std::vector<double>>& getData() const { return raw_data; }
+
 private:
-    std::vector<std::vector<double>> raw_data;
-    std::vector<std::string> headers;
+    std::vector<std::vector<double>> raw_data; 
+    std::vector<std::string> headers;          
 };
 
 } // namespace ridge_ml
