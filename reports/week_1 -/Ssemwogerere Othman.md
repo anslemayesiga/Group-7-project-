@@ -18,7 +18,7 @@ The available Git history contains no project commits during this reporting peri
 
 ## AI Use
 
-- Tool: OpenAI Codex.
-- Purpose: organize this repository cross-check and proposed file list.
-- Reason: make the report distinguish member-reported activity from tracked code evidence. This does not assert that the named member used AI for their Week 1 work; the member should verify and complete their own AI declaration.
-
+* **Tool:** Google Gemini Pro
+* **Purpose:** Assisted with initial module design, clarifying C++ header structures, and verifying mathematical formulas for the model evaluation metrics.
+* **Reason:** To ensure accurate mathematical formulation and establish a solid architectural foundation before writing the final C++ code.
+*
