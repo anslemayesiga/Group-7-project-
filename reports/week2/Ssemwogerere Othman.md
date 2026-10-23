@@ -2,24 +2,21 @@
 
 **Name:** Ssemwogerere Othman  
 **Assigned module:** Model evaluation metrics  
-**Reporting period:** 6-12 October 2026  
-**Evidence basis:** available Git history and existing member notes through 17 October.
+**Reporting period:** 6–12 October 2026
 
-> Draft prepared from the available records. No commit in Git does not prove no offline work occurred. The named member should verify the record and add or correct any work done outside the repository before submission.
+## Completed
 
-## Completed / repository evidence
+- The responsibility plan identifies model evaluation metrics as the assigned module.
 
-- No Week 2 individual progress report or metrics HPP/CPP/test commit is present in the available repository history.
+## In progress / repository evidence
 
-## In Progress
+- No metrics header, implementation, or focused test is recorded in the repository for this reporting period.
+- The planned API was `include/Group-7-project-ridge-lib/metrics.hpp` and `src/metrics.cpp`, with tests to follow.
 
-- No code activity can be verified for the assigned evaluation module during this period. This means the report is incomplete, not that the member did no work.
+## Challenges
 
-## Challenges/Blockers
+- The metrics module depends on the shared vector type and prediction outputs being consistent across models.
 
-- The metrics API needs agreed prediction/target types and must integrate with the baseline and ridge model outputs. Add evidence for any offline work.
+## Next work
 
-## Next Week - files to merge
-
-- include/ridge_ml/metrics.hpp, src/metrics.cpp, tests/test_metrics.cpp. Agree metric names and invalid-input behavior, then merge implementation and tests.
-
+- Implement and test MAE, MSE, RMSE, and R² using matching, non-empty target and prediction vectors.

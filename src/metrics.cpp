@@ -1,6 +1,7 @@
 #include "Group-7-project-ridge-lib/metrics.hpp"
 
 #include <cmath>
+#include <algorithm>
 #include <stdexcept>
 
 namespace ridge_ml {
@@ -8,6 +9,11 @@ namespace {
 void validate_pair(const Vector& actual, const Vector& predicted) {
     if (actual.empty() || actual.size() != predicted.size()) {
         throw std::invalid_argument("Metric vectors must have equal non-zero length");
+    }
+    for (std::size_t i = 0; i < actual.size(); ++i) {
+        if (!std::isfinite(actual[i]) || !std::isfinite(predicted[i])) {
+            throw std::invalid_argument("Metric values must be finite");
+        }
     }
 }
 } // namespace

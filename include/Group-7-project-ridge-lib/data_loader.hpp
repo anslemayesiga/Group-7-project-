@@ -8,6 +8,7 @@ namespace ridge_ml {
 
 class DataLoader {
 public:
+    enum class MissingValuePolicy { reject, mean_impute_features };
     struct Dataset {
         std::vector<std::vector<double>> features;
         std::vector<double> targets;
@@ -23,7 +24,8 @@ public:
 
     // Loads a numeric CSV whose final column is the target. Quoted CSV fields
     // are not supported; malformed or non-numeric rows are rejected.
-    Dataset loadCSV(const std::string& filepath, bool has_header = true) const;
+    Dataset loadCSV(const std::string& filepath, bool has_header = true,
+                    MissingValuePolicy missing_policy = MissingValuePolicy::reject) const;
 
     // Returns a deterministic, contiguous train/test split.
     SplitResult trainTestSplit(

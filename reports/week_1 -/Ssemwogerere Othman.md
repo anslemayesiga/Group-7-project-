@@ -16,9 +16,7 @@ The available Git history contains no project commits during this reporting peri
 - include/ridge_ml/metrics.hpp, src/metrics.cpp, tests/test_metrics.cpp
 - The member should commit the header, implementation, and focused tests together when the module is ready, then request review from the dependent module owners.
 
-## AI Use
 
-* **Tool:** Google Gemini Pro
 * **Purpose:** Assisted with initial module design, clarifying C++ header structures, and verifying mathematical formulas for the model evaluation metrics.
 * **Reason:** To ensure accurate mathematical formulation and establish a solid architectural foundation before writing the final C++ code.
 *
