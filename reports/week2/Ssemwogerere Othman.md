@@ -17,7 +17,7 @@
 
 ## Challenges/Blockers
 
-- The metrics API needs agreed prediction/target types and must integrate with the baseline and ridge model outputs. Add evidence for any offline work.
+- The metrics API needs to agreed prediction/target types and must integrate with the baseline and ridge model outputs. Add evidence for any offline work.
 
 ## Next Week - files to merge
 
