@@ -2,7 +2,7 @@
 
 **Name:** Ainemugabe Crisbert  
 **Assigned module:** Hyperparameter tuning  
-**Reporting period:** 20–23 October 2026
+**Reporting period:** 20th–23rd October 2026
 
 ## Module status
 
