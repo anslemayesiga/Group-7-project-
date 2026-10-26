@@ -8,12 +8,7 @@ namespace ridge_ml {
 
 class DataLoader {
 public:
-    enum class MissingValuePolicy { reject, mean_impute_features };
-    struct Dataset {
-        std::vector<std::vector<double>> features;
-        std::vector<double> targets;
-        std::vector<std::string> feature_names;
-    };
+    DataLoader() = default;
 
     struct SplitResult {
         std::vector<std::vector<double>> X_train_raw;
@@ -22,19 +17,19 @@ public:
         std::vector<double> y_test;
     };
 
-    // Loads a numeric CSV whose final column is the target. Quoted CSV fields
-    // are not supported; malformed or non-numeric rows are rejected.
-    Dataset loadCSV(const std::string& filepath, bool has_header = true,
-                    MissingValuePolicy missing_policy = MissingValuePolicy::reject) const;
+    void loadCSV(const std::string& filepath, bool has_header = true);
+    void handleMissingValues();
+    std::vector<std::vector<double>> extractFeatures(size_t target_column_idx);
+    std::vector<double> extractTargetColumn(size_t column_idx);
+    SplitResult trainTestSplit(const std::vector<std::vector<double>>& full_features, 
+                               const std::vector<double>& full_targets, 
+                               double train_size = 0.8);
 
-    // Returns a deterministic, contiguous train/test split.
-    SplitResult trainTestSplit(
-        const std::vector<std::vector<double>>& features,
-        const std::vector<double>& targets,
-        double train_size = 0.8
-    ) const;
+    const std::vector<std::vector<double>>& getData() const { return raw_data; }
 
-    SplitResult trainTestSplit(const Dataset& dataset, double train_size = 0.8) const;
+private:
+    std::vector<std::vector<double>> raw_data; 
+    std::vector<std::string> headers;          
 };
 
 } // namespace ridge_ml
