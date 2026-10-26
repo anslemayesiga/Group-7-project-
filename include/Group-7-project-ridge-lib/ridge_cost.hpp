@@ -5,9 +5,9 @@
 
 namespace ridge_ml {
 
-// Returns sum((prediction - target)^2)/(2m) plus
-// lambda * sum(weights^2)/(2m). theta[0] is treated as the intercept
-// and is excluded from the L2 penalty.
+// Return squared-error cost plus an L2 penalty; theta[0] is the unpenalized
+// intercept and all later parameters are treated as feature coefficients.
+// actual and predicted must have equal non-zero lengths; lambda must be non-negative.
 double ridge_cost(
     const Vector& actual,
     const Vector& predicted,

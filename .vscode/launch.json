@@ -2,32 +2,23 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run OOP demo",
+            "name": "Run RidgeLib demo (F5)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/oop_demo.exe",
+            "program": "${workspaceFolder}/build-mingw/ridge_demo.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "C:/msys64/ucrt64/bin;${env:PATH}"
+                }
+            ],
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
-            "preLaunchTask": "CMake: build"
-        },
-        {
-            "name": "Run ridge demo",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/ridge_demo.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
-            "preLaunchTask": "CMake: build"
+            "preLaunchTask": "Build RidgeLib"
         }
     ]
 }

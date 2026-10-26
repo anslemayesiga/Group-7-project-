@@ -2,84 +2,93 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "CMake: configure",
+            "label": "Configure RidgeLib",
             "type": "process",
-            "command": "${env:LOCALAPPDATA}/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/bin/cmake.exe",
+            "command": "cmake",
             "args": [
-                "-S", "${workspaceFolder}",
-                "-B", "${workspaceFolder}/build",
-                "-G", "MinGW Makefiles",
+                "-S",
+                "${workspaceFolder}",
+                "-B",
+                "${workspaceFolder}/build-mingw",
+                "-G",
+                "MinGW Makefiles",
                 "-DCMAKE_CXX_COMPILER=C:/msys64/ucrt64/bin/g++.exe"
             ],
-            "options": { "cwd": "${workspaceFolder}" },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
         {
-            "label": "CMake: build",
+            "label": "Build RidgeLib",
             "type": "process",
-            "command": "${env:LOCALAPPDATA}/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/bin/cmake.exe",
-            "args": ["--build", "${workspaceFolder}/build", "--parallel", "4"],
-            "options": { "cwd": "${workspaceFolder}" },
-            "dependsOn": "CMake: configure",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build-mingw",
+                "--parallel",
+                "4"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Configure RidgeLib",
             "dependsOrder": "sequence",
             "problemMatcher": "$gcc",
-            "group": { "kind": "build", "isDefault": true }
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
         },
         {
-            "label": "CMake: test",
+            "label": "Run RidgeLib tests",
             "type": "process",
-            "command": "${env:LOCALAPPDATA}/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/bin/ctest.exe",
-            "args": ["--test-dir", "${workspaceFolder}/build", "--output-on-failure"],
-            "options": { "cwd": "${workspaceFolder}" },
-            "dependsOn": "CMake: build",
+            "command": "ctest",
+            "args": [
+                "--test-dir",
+                "${workspaceFolder}/build-mingw",
+                "--output-on-failure"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build RidgeLib",
             "dependsOrder": "sequence",
             "problemMatcher": []
         },
         {
-            "label": "Build OOP demo",
+            "label": "Build and run Ridge demo",
             "type": "process",
-            "command": "g++",
-            "args": [
-                "-std=c++17", "-Wall", "-Wextra", "-Wpedantic", "-I", "include",
-                "src/MinMaxScaler.cpp", "src/data_loader.cpp", "src/gradient_descent.cpp",
-                "src/linear_regression.cpp", "src/matrix.cpp", "src/metrics.cpp",
-                "src/normal_equation.cpp", "src/ridge_regression.cpp",
-                "src/ridge_regression_cost.cpp", "src/tuning.cpp", "examples/oop_demo.cpp",
-                "-o", "oop_demo.exe"
-            ],
-            "options": { "cwd": "${workspaceFolder}" },
-            "problemMatcher": "$gcc",
-            "group": "build"
+            "command": "${workspaceFolder}/build-mingw/ridge_demo.exe",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build RidgeLib",
+            "dependsOrder": "sequence",
+            "problemMatcher": []
         },
         {
-            "label": "Build ridge demo",
-            "type": "process",
-            "command": "g++",
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
             "args": [
-                "-std=c++17", "-Wall", "-Wextra", "-Wpedantic", "-I", "include",
-                "src/MinMaxScaler.cpp", "src/data_loader.cpp", "src/gradient_descent.cpp",
-                "src/linear_regression.cpp", "src/matrix.cpp", "src/metrics.cpp",
-                "src/normal_equation.cpp", "src/ridge_regression.cpp",
-                "src/ridge_regression_cost.cpp", "src/tuning.cpp", "examples/ridge_demo.cpp",
-                "-o", "ridge_demo.exe"
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
-            "options": { "cwd": "${workspaceFolder}" },
-            "problemMatcher": "$gcc"
-        },
-        {
-            "label": "Build DataLoader check",
-            "type": "process",
-            "command": "g++",
-            "args": [
-                "-std=c++17", "-Wall", "-Wextra", "-Wpedantic", "-I", "include",
-                "src/MinMaxScaler.cpp", "src/data_loader.cpp", "src/gradient_descent.cpp",
-                "src/linear_regression.cpp", "src/matrix.cpp", "src/metrics.cpp",
-                "src/normal_equation.cpp", "src/ridge_regression.cpp",
-                "src/ridge_regression_cost.cpp", "src/tuning.cpp", "tests/test_data_loader.cpp",
-                "-o", "test_data_loader.exe"
+            "options": {
+                "cwd": "C:/msys64/ucrt64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
             ],
-            "options": { "cwd": "${workspaceFolder}" },
-            "problemMatcher": "$gcc"
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Task generated by Debugger."
         }
     ]
 }

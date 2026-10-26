@@ -5,7 +5,7 @@
 
 namespace ridge_ml {
 
-// Common runtime-polymorphic contract for regression models.
+// Shared fit/predict interface for interchangeable regression models.
 class Regressor {
 public:
     virtual ~Regressor() = default;

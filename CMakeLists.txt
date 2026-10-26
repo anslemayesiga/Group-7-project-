@@ -14,6 +14,7 @@ add_library(ridgelib
     src/matrix.cpp
     src/metrics.cpp
     src/normal_equation.cpp
+    src/normal_solver.cpp
     src/ridge_regression.cpp
     src/ridge_regression_cost.cpp
     src/tuning.cpp
@@ -47,7 +48,7 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(EXPORT ridgelibTargets NAMESPACE ridgelib:: DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/ridgelib)
 
 if(BUILD_TESTING)
-    foreach(test_target IN ITEMS test_data_loader test_metrics test_matrix test_scaler test_standard_scaler test_linear_regression test_normal_equation test_ridge test_gradient_descent test_tuning test_workflow)
+    foreach(test_target IN ITEMS test_data_loader test_metrics test_matrix test_scaler test_standard_scaler test_linear_regression test_normal_equation tests_normal_solver test_ridge test_gradient_descent test_tuning test_workflow)
         if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/${test_target}.cpp")
             add_executable(${test_target} "tests/${test_target}.cpp")
             target_link_libraries(${test_target} PRIVATE ridgelib::ridgelib)
