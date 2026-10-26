@@ -1,25 +1,33 @@
-# Week 4 Group Completion Report
+ Week 4 Progress Report
 
-**Project:** RidgeLib — Ridge Regression from Scratch  
-**Reporting period:** 20–23 October 2026
+ Completed
 
-## Completed
+* Completed final integration of all library modules (module1 and module2) from branches into the main branch.
+* Finalized and ran the test suite across normal cases, edge cases, and invalid input boundaries.
+* Verified that the library compiles cleanly via CMake from a fresh environment.
+* Completed code reviews for all individual components to ensure consistent design.
+* Built out executable examples in the examples/ directory to demonstrate public API usage.
+* Written the project limitations, member contributions, and collaboration sections within the README.md.
 
-- Reconciled the data loader with the public `ridge_ml::DataLoader` interface. It reads numeric CSV data, validates row shapes and values, separates the last column as the target, and creates deterministic train/test splits.
-- Repaired the CMake project definition and exposed the reusable `ridgelib::ridgelib` C++17 target with public include paths, examples, and CTest integration.
-- Updated the data-loader test to exercise CSV loading, feature/target separation, splitting, and invalid split rejection through the public API.
-- Documented library integration and usage in the root README.
+ In Progress
 
-## Verification
+* Performing final runtime test checks on a clean environment machine to guarantee reproducible builds.
+* Compiling team presentation materials covering library design and implementation decisions.
+* Conducting a final review of the repository structure to ensure all required project files are present.
 
-- Configured and built with GNU C++ 16.2 using the MinGW Makefiles generator.
-- Both `ridge_demo` and `oop_demo` compiled.
-- CTest result: 1 test passed, 0 failed (`test_data_loader`).
+ Challenges
 
-## Remaining limitation
+* Encountered minor merge conflicts when combining module branches into the main branch, which were resolved collaboratively as a team.
+* Experienced an initial build configuration discrepancy on different machines, which was fixed by standardizing path inclusions in CMakeLists.txt.
 
-- The old `linear_ml::NormalSolver` implementation uses a retired Matrix API and is excluded from the CMake library target. Use `ridge_ml::fit_normal_equation` and the current `ridge_ml::Matrix` API. Dedicated tests for matrix arithmetic, ridge fitting, optimizer behavior, and evaluation metrics are still recommended before release.
+ Next Week
 
-## Reuse
+* Submit the finalized project package before the November 5, 2026 deadline.
+* Deliver the final presentation and demonstrate the working library to the class.
+* Answer technical questions regarding implementation choices during the project defense.
 
-Consumers can add this repository using `add_subdirectory(...)` and link `ridgelib::ridgelib`. See the root README for the complete build and usage instructions.
+ AI Use
+
+* Tool: Copilot Chat
+* Purpose: Assisted in debugging a CMake path inclusion issue during final testing environment setup.
+* Reason: Expedited cross-platform build validation across different team members' development environments.
