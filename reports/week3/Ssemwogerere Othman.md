@@ -16,4 +16,4 @@
 
 ## Next work
 
-- Add a CTest target covering numeric results, invalid lengths/empty input, and constant-target R² behavior.
+- Add a CTest target covering numeric results, invalid lengths/empty inputs, and constant-target R² behavior.
