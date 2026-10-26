@@ -1,6 +1,6 @@
 #include "Group-7-project-ridge-lib/data_loader.hpp"
 #include "Group-7-project-ridge-lib/MinMaxScaler.hpp"
-#include "Group-7-project-ridge-lib/ridge_regression.hpp"
+#include "Group-7-project-ridge-lib/ridge_cost_function.hpp"
 #include "Group-7-project-ridge-lib/metrics.hpp"
 #include <cassert>
 #include <cmath>

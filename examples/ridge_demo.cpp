@@ -1,6 +1,6 @@
 #include "Group-7-project-ridge-lib/matrix.hpp"
 #include "Group-7-project-ridge-lib/normal_equation.hpp"
-#include "Group-7-project-ridge-lib/ridge_cost.hpp"
+#include "Group-7-project-ridge-lib/ridge_cost_function.hpp"
 
 #include <iostream>
 

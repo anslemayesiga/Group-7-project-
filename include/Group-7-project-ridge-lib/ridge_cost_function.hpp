@@ -1,6 +1,7 @@
-#ifndef GROUP_7_PROJECT_RIDGE_LIB_RIDGE_REGRESSION_HPP
-#define GROUP_7_PROJECT_RIDGE_LIB_RIDGE_REGRESSION_HPP
+#ifndef RIDGE_ML_RIDGE_COST_FUNCTION_HPP
+#define RIDGE_ML_RIDGE_COST_FUNCTION_HPP
 
+#include "Group-7-project-ridge-lib/matrix.hpp"
 #include "Group-7-project-ridge-lib/regressor.hpp"
 
 namespace ridge_ml {
@@ -21,10 +22,20 @@ public:
 
 private:
     double lambda_;
-    Vector coefficients_; // coefficient 0 is the unpenalized intercept
+    Vector coefficients_;
     bool fitted_ = false;
 };
 
+// Return squared-error cost plus an L2 penalty; theta[0] is the unpenalized
+// intercept and all later parameters are treated as feature coefficients.
+// actual and predicted must have equal non-zero lengths; lambda must be non-negative.
+double ridge_cost(
+    const Vector& actual,
+    const Vector& predicted,
+    const Vector& theta,
+    double lambda
+);
+
 } // namespace ridge_ml
 
-#endif // GROUP_7_PROJECT_RIDGE_LIB_RIDGE_REGRESSION_HPP
+#endif // RIDGE_ML_RIDGE_COST_FUNCTION_HPP

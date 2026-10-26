@@ -1,5 +1,4 @@
-#include "Group-7-project-ridge-lib/ridge_regression.hpp"
-#include "Group-7-project-ridge-lib/ridge_cost.hpp"
+#include "Group-7-project-ridge-lib/ridge_cost_function.hpp"
 #include <cassert>
 #include <cmath>
 #include <stdexcept>

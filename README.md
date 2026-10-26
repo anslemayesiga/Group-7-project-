@@ -7,9 +7,9 @@ RidgeLib (Project 14) is a reusable C++17 library implementing matrix operations
 - Matrix and vector arithmetic: `matrix.hpp`
 - Numeric CSV loading, feature/target separation, deterministic split, and explicit optional mean imputation for feature blanks: `data_loader.hpp`
 - Min-max and standard feature scaling: `MinMaxScaler.hpp`, `StandardScaler.hpp`
-- Linear baseline, ridge estimator, and common polymorphic model interface: `linear_regression.hpp`, `ridge_regression.hpp`, `regressor.hpp`
+- Linear baseline and common polymorphic model interface: `linear_regression.hpp`, `regressor.hpp`
 - Gaussian elimination and normal equation: `normal_equation.hpp`
-- Ridge objective, batch gradient descent, and grid search: `ridge_cost.hpp`, `gradient_descent.hpp`, `tuning.hpp`
+- Ridge estimator and objective, batch gradient descent, and grid search: `ridge_cost_function.hpp`, `gradient_descent.hpp`, `tuning.hpp`
 - MAE, MSE, RMSE, and R²: `metrics.hpp`
 
 Missing feature values are rejected by default; callers may explicitly select column-mean imputation. Missing targets and nonnumeric values are rejected. Scalers currently operate on one feature vector at a time. Gradient descent has a maximum iteration count and optional absolute change-in-cost tolerance and returns cost history, iterations run, and convergence status. Grid search uses a caller-provided validation set and R²; do not pass the final test set as validation data.
@@ -41,7 +41,7 @@ Include public headers through the stable project include prefix:
 
 ```cpp
 #include <Group-7-project-ridge-lib/matrix.hpp>
-#include <Group-7-project-ridge-lib/ridge_regression.hpp>
+#include <Group-7-project-ridge-lib/ridge_cost_function.hpp>
 ```
 
 Example:

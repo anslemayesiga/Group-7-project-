@@ -1,6 +1,6 @@
 #include "Group-7-project-ridge-lib/linear_regression.hpp"
 #include "Group-7-project-ridge-lib/metrics.hpp"
-#include "Group-7-project-ridge-lib/ridge_regression.hpp"
+#include "Group-7-project-ridge-lib/ridge_cost_function.hpp"
 #include "Group-7-project-ridge-lib/tuning.hpp"
 
 #include <iostream>
