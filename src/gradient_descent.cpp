@@ -6,32 +6,54 @@
 
 namespace ridge_ml {
 
-GradientDescent::GradientDescent(double learning_rate, std::size_t iterations, double lambda)
-    : learning_rate_(learning_rate), iterations_(iterations), lambda_(lambda) {
+GradientDescent::GradientDescent(double learning_rate, std::size_t iterations, double lambda,
+                                 double tolerance)
+    : learning_rate_(learning_rate), iterations_(iterations), lambda_(lambda), tolerance_(tolerance) {
+    // Reject invalid configuration once so fit() can assume usable settings.
     if (!std::isfinite(learning_rate_) || learning_rate_ <= 0.0) {
         throw std::invalid_argument("Learning rate must be finite and positive");
     }
     if (!std::isfinite(lambda_) || lambda_ < 0.0) {
         throw std::invalid_argument("Lambda must be finite and non-negative");
     }
+    if (!std::isfinite(tolerance_) || tolerance_ < 0.0) {
+        throw std::invalid_argument("Tolerance must be finite and non-negative");
+    }
 }
 
 GradientDescentResult GradientDescent::fit(const Matrix& design, const Vector& targets,
                                            Vector parameters) const {
+    // Validate shapes before doing any numerical work.
     if (design.rows() == 0 || design.cols() == 0 || design.rows() != targets.size()) {
         throw std::invalid_argument("Design and targets must have matching non-empty rows");
     }
+    // Non-finite data would make gradients and costs unusable.
+    for (double target : targets) {
+        if (!std::isfinite(target)) throw std::invalid_argument("Targets must be finite");
+    }
+    for (std::size_t row = 0; row < design.rows(); ++row) {
+        for (std::size_t col = 0; col < design.cols(); ++col) {
+            if (!std::isfinite(design(row, col))) throw std::invalid_argument("Design values must be finite");
+        }
+    }
     if (parameters.empty()) {
+        // Start from zero coefficients unless the caller supplied a starting point.
         parameters.assign(design.cols(), 0.0);
     }
     if (parameters.size() != design.cols()) {
         throw std::invalid_argument("Initial parameter count must match design columns");
     }
+    for (double parameter : parameters) {
+        if (!std::isfinite(parameter)) throw std::invalid_argument("Initial parameters must be finite");
+    }
 
     GradientDescentResult result;
+    // Convert once for the repeated averages inside the optimization loop.
     const double sample_count = static_cast<double>(design.rows());
     result.cost_history.reserve(iterations_);
+    // Each iteration records the current objective, then takes one gradient step.
     for (std::size_t iteration = 0; iteration < iterations_; ++iteration) {
+        // Predict current targets, then accumulate residuals and their gradients.
         Vector predictions = design.multiply(parameters);
         Vector gradient(parameters.size(), 0.0);
         double squared_error = 0.0;
@@ -43,18 +65,30 @@ GradientDescentResult GradientDescent::fit(const Matrix& design, const Vector& t
             }
         }
         double penalty = 0.0;
+        // Average the data gradient and add ridge penalty only to feature weights.
         for (std::size_t col = 0; col < parameters.size(); ++col) {
             gradient[col] /= sample_count;
+            // Column zero represents the intercept and is not regularized.
             if (col != 0) {
                 gradient[col] += lambda_ * parameters[col] / sample_count;
                 penalty += parameters[col] * parameters[col];
             }
         }
-        result.cost_history.push_back((squared_error + lambda_ * penalty) / (2.0 * sample_count));
+        const double cost = (squared_error + lambda_ * penalty) / (2.0 * sample_count);
+        // Save the cost before updating parameters so history corresponds to each step.
+        result.cost_history.push_back(cost);
+        result.iterations_run = iteration + 1;
+        if (tolerance_ > 0.0 && result.cost_history.size() > 1 &&
+            std::abs(result.cost_history[result.cost_history.size() - 2] - cost) <= tolerance_) {
+            result.converged = true;
+            break;
+        }
+        // Move parameters opposite the gradient to reduce the objective.
         for (std::size_t col = 0; col < parameters.size(); ++col) {
             parameters[col] -= learning_rate_ * gradient[col];
         }
     }
+    // Return the latest parameters with the recorded convergence information.
     result.parameters = std::move(parameters);
     return result;
 }

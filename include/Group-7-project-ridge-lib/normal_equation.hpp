@@ -5,11 +5,10 @@
 
 namespace ridge_ml {
 
-// Solves A x = b using Gaussian elimination with partial pivoting.
+// Solve a square linear system A x = b using Gaussian elimination.
 Vector gaussian_solve(const Matrix& matrix, const Vector& right_hand_side);
 
-// Computes the unregularized normal equation. Include a column of ones in X
-// when the caller wants an intercept term.
+// Solve ordinary least squares. Add a column of ones to features for an intercept.
 Vector fit_normal_equation(const Matrix& features, const Vector& targets);
 
 } // namespace ridge_ml

@@ -35,3 +35,11 @@ The current checkout now has the canonical `include/Group-7-project-ridge-lib/ma
 <img width="1080" height="1080" alt="WhatsApp Image 2026-10-19 at 5 28 47 PM" src="https://github.com/user-attachments/assets/c91e5802-83a2-47a7-9adb-7a75daf14578" />
 
 
+
+
+## Transferred responsibilities previously assigned to Tumweheire Desire
+
+The following note preserves the prior member record as a handover reference; it does not claim that Ayesiga Anslem completed the earlier work:
+
+
+
