@@ -17,6 +17,12 @@
 
 - The metrics module depends on the shared vector type and prediction outputs being consistent across models.
 
-## Next work
+ SSEMWOGERERE-OTHMAN
+- The metrics API needs to agreed prediction/target types and must integrate with the baseline and ridge model outputs. Add evidence for any offline work.
+
+## Next Week - files to merge
+
+- include/ridge_ml/metrics.hpp, src/metrics.cpp, tests/test_metrics.cpp. Agree metric names and invalid-input behavior, then merge implementation and test
+## Next workmain
 
 - Implement and test MAE, MSE, RMSE, and R² using matching, non-empty target and prediction vectors.
