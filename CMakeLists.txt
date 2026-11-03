@@ -8,7 +8,7 @@ include(CTest)
 add_library(ridgelib
     src/MinMaxScaler.cpp
     src/StandardScaler.cpp
-    src/data_loader.cpp
+    src/data_utils.cpp
     src/gradient_descent.cpp
     src/linear_regression.cpp
     src/matrix.cpp

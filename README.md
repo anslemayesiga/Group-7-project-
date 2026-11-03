@@ -26,7 +26,7 @@ ctest --test-dir build --output-on-failure
 
 On Windows with MSYS2 MinGW, configure with `-G "MinGW Makefiles" -DCMAKE_CXX_COMPILER=g++`.
 
-VS Code users should install a C++17 toolchain (such as MSYS2 MinGW-w64), ensure `cmake` and `g++` are on `PATH`, then run the commands above in the project root. Linux users can use their distribution's CMake and GCC/Clang packages.
+VS Code users should install a C++17 toolchain (such as MSYS2 MinGW-w64). In this workspace, `Ctrl+Shift+B` runs the CMake build for the complete project; use the `Run RidgeLib tests` task for the test suite, or press `F5` to build and debug the Ridge demo. Do not compile a header or an individual library source file as a standalone executable. Linux users can use their distribution's CMake and GCC/Clang packages.
 
 ## Use as a library
 
