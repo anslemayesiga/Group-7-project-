@@ -37,8 +37,49 @@
             "problemMatcher": "$gcc",
             "group": {
                 "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Build active test",
+            "type": "process",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build-mingw",
+                "--target",
+                "${fileBasenameNoExtension}",
+                "--parallel",
+                "4"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Configure RidgeLib",
+            "dependsOrder": "sequence",
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Run active test",
+            "type": "process",
+            "command": "ctest",
+            "args": [
+                "--test-dir",
+                "${workspaceFolder}/build-mingw",
+                "--output-on-failure",
+                "-R",
+                "^${fileBasenameNoExtension}$"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build active test",
+            "dependsOrder": "sequence",
+            "problemMatcher": []
         },
         {
             "label": "Run RidgeLib tests",
