@@ -9,6 +9,8 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <limits>
+
 
 using namespace ridge_ml;
 
