@@ -13,9 +13,9 @@ using Vector = std::vector<double>;
 // A bounds-checked, row-major matrix used by the regression algorithms.
 class Matrix {
 public:
-    // Empty default matrix; use a dimensioned constructor for storage.
+    // Empty default matrix; used a dimensioned constructor for storage.
     Matrix() = default;
-    // Create a filled matrix or take ownership of row-major values.
+    // Created a filled matrix 
     Matrix(std::size_t rows, std::size_t cols, double fill = 0.0);
     Matrix(std::size_t rows, std::size_t cols, std::vector<double> values);
 

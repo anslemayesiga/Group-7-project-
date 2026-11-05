@@ -1,6 +1,6 @@
 # RidgeLib
 
-RidgeLib (Project 14) is a reusable C++17 library implementing matrix operations and a ridge-regression workflow without a machine-learning dependency in its core.
+RidgeLib (Project 7) is a reusable C++17 library implementing matrix operations and a ridge-regression workflow without a machine-learning dependency in its core.
 
 ## Features and module APIs
 
@@ -71,7 +71,7 @@ CSV must contain at least one numeric feature and one numeric target in its fina
 
 ## Group responsibilities
 
-The current module plan assigns: Ayesiga Anslem—matrix/vector; Wobusobozi Chrispus Owen—dataset loading; preprocessing—group scope, currently incomplete; Kyelanyi Martin Tom—scaling/build; Kamugisha Elias—linear regression; Khalid Taban Luate—normal equation; Mandela Nickson—ridge cost/model; gradient descent—transferred from Tumweheire Desire to Ayesiga Anslem; Ainemugabe Crisbert—tuning; Ssemwogerere Othman—metrics. These are assignment areas, not claims of independently authored code. Confirm current ownership with the group before submission. The planned review rotation is member 1 reviews 2, continuing cyclically, with member 10 reviewing member 1.
+The current module plan assigns: Ayesiga Anslem—matrix/vector, gradient descent ; Wobusobozi Chrispus Owen—dataset loading; preprocessing—group scope, currently incomplete; Kyelanyi Martin Tom—scaling/build; Kamugisha Elias—linear regression; Mutyaba Rashid-Regressor Khalid Taban Luate—normal equation; Mandela Nickson—ridge cost/model; gradient descent—transferred from Tumweheire Desire to Ayesiga Anslem; Ainemugabe Crisbert—tuning; Ssemwogerere Othman—metrics. These are assignment areas, not claims of independently authored code. Confirm current ownership with the group before submission. The planned review rotation is member 1 reviews 2, continuing cyclically, with member 10 reviewing member 1.
 
 ## Reference comparison and AI disclosure
 

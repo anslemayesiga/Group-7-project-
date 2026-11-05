@@ -23,7 +23,7 @@ class GradientDescent {
 public:
     // tolerance is an absolute change-in-cost threshold; zero disables early stopping.
     // The design matrix should include an intercept as its first column.
-    GradientDescent(double learning_rate, std::size_t iterations, double lambda = 0.0,
+    GradientDescent(double learning_rate, std::size_t iterations, double lambda = 0.0,//  Controls the size of each parameter update.
                     double tolerance = 0.0);
     // Start from zero parameters when initial_parameters is omitted.
     GradientDescentResult fit(const Matrix& design, const Vector& targets,
@@ -31,9 +31,9 @@ public:
 
 private:
     double learning_rate_;
-    std::size_t iterations_;
-    double lambda_;
-    double tolerance_;
+    std::size_t iterations_; //Determines how many training steps are performed at most
+    double lambda_; //Controls the penalty applied to large coefficients.
+    double tolerance_; //Determines when training can stop early.
 };
 
 } // namespace ridge_ml
