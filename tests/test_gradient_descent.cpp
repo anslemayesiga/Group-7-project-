@@ -2,9 +2,10 @@
 
 // Check convergence, early stopping, and rejection of invalid training inputs.
 #include <cassert>
-#include <cmath>
-#include <limits>
-#include <stdexcept>
+#include <cmath>//
+#include <limits>// provides std::numeric_limits
+#include <stdexcept> // provides std::invalid_argument
+
 
 int main() {
     using namespace ridge_ml;

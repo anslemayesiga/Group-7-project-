@@ -75,7 +75,7 @@ The current module plan assigns: Ayesiga Anslem—matrix/vector, gradient descen
 
 ## Reference comparison and AI disclosure
 
-No scikit-learn comparison has been run or recorded yet. A reproducible comparison should use identical numeric data, intercept handling, scaling, and lambda/objective conventions before reporting coefficients or scores. AI assistance disclosure should be completed by members according to their course rules and actual use; this README does not attribute AI use to individuals.
+No scikit-learn comparison has been run or recorded yet. A reproducible comparison should use identical numeric data, intercept handling, scaling, and lambda/objective conventions before reporting coefficients or scores. AI assistance disclosure should be completed by members according to their course rules and actual use;
 
 ## Project layout
 
