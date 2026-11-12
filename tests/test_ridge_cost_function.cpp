@@ -15,7 +15,7 @@ int main() {
     bool rejected = false;
     try {
         (void)model.predict(features);
-    } catch (const std::logic_error&) {
+    } catch (const std::logic_error&) { 
         rejected = true;
     }
     assert(rejected);
