@@ -80,7 +80,7 @@ void test_dimension_mismatch_throws_exception() {
 }
 
 int main() {
-    std::cout << "=== STARTING PERSON 5 NORMAL SOLVER VERIFICATION RUNS ===\n";
+    std::cout << "=== STARTING  NORMAL SOLVER VERIFICATION RUNS ===\n";
     test_standard_invertible_system();
     test_singular_matrix_throws_exception();
     test_dimension_mismatch_throws_exception();
